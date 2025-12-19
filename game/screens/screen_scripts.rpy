@@ -1,0 +1,5 @@
+init python:
+    def clear_screen():
+        screens = ["object_computer", "computer_screen"]
+        for s in screens:
+            renpy.hide_screen(s)
