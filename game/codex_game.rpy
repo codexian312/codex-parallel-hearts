@@ -1,13 +1,44 @@
+default initial_startup = False
 
 
 
 
 label codex_start:
     $ clear_screen()
-    scene black with fade
-    Codex "Welcome to Codex: Parallel Hearts, a real life simulation visual novel"
-    
-    
-    "Please enter login details"
-    $ char.playerInput = renpy.input("Enter your name:")
-    $ char.playerInput = char.player.strip()
+
+    if not initial_startup:
+        scene black with fade
+        "You sit down in front of the laptop, adjusting yourself so it feels right."
+        "The glow of the monitor lights up the room, casting long shadows across the walls of your room."
+        "You feel a quiet excitement as the startup screen for the game appears."
+
+        play BGM_one "audio/bgm/game_bgm1.mp3"
+        scene game_mainmenu with blinds
+        Codex "Welcome to [Codexp], a real-life simulation visual novel."
+        Codex "In this world, every choice you make shapes the relationships, storylines, and your own unique experience."
+        Codex "You'll meet characters with distinct personalities, explore different locations, and make decisions that have real consequences."
+        Codex "Some choices may lead to friendship, some to rivalry, and others... might make your heart race."
+        Codex "Please enter your login details to begin your journey."
+
+        $ char.playerInput = renpy.input("Enter your name:").strip()
+        
+        if not char.playerInput:
+            dev "No name entered. Defaulting to \"Hero\"."
+            $ char_player = "Hero"
+        else:
+            $ char.player = char.playerInput
+
+        $ persistent.player_name = char.player
+        $ char.player = Character(char.player, color="#ff0000")
+        $ initial_startup = True
+
+        Codex "Welcome player {b}[char.player]{/b}. Have fun and immerse yourself in everything this adventure has to offer."
+        dev "This is a demo release of the game. Only Furina's Chapter 1 content is available."
+
+        char.player "Alright... let's dive in and see what this is all about."
+        jump furina_chapter1
+
+
+
+
+

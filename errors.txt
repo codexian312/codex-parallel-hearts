@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/screens/bedroom_screens.rpy", line 17: imagebutton expects a non-empty block.
-    imagebutton:
-                ^
+File "game/location/furina_story.rpy", line 371: expected statement.
+    end with scane black with fade
+        ^
+
+File "game/location/furina_story.rpy", line 372: expected statement.
+    narration on eating, enjoy each other company, finish cake, get ready to leave
+                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Dec 18 18:06:17 2025
+Sat Dec 20 07:34:46 2025
