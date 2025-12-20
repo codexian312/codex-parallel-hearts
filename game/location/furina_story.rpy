@@ -1,6 +1,10 @@
-default furina_lovepoint = 0
+default furina_lovepoints = 0
 default furina_c1_order = 0
 # {color=#d33d3d}[char.player]{/color}
+
+image furina_demoMovie1 = Movie(play="scenes/furina/furina_demo1.webm")
+image furina_demoMovie2 = Movie(play="scenes/furina/furina_demo2.webm")
+image furina_demoMovie3 = Movie(play="scenes/furina/furina_demo3.webm")
 
 label furina_chapter1:
     $ clear_screen()
@@ -29,7 +33,7 @@ label furina_chapter1:
     menu:
         "What should I say?"
         "{color=#ff0000}[char.player]{/color}: I-I'm really sorry, Furina.":
-            $ furina_lovepoint += 5
+            $ furina_lovepoints += 5
             char.player "{think}Better be honest and just apologise... I hope she forgives me quickly before she really starts getting more annoyed{/think}"
             char.furina "Hmph... I suppose I can let it slide this time. Just barely."
             char.furina "You're lucky I'm in a good mood today... especially since you're only a few minutes late."
@@ -44,7 +48,7 @@ label furina_chapter1:
             char.player "Lead the way, Furina."
 
         "{color=#ff0000}[char.player]{/color}: Heh, you don't look nearly as mad as you sound.":
-            $ furina_lovepoint += 10
+            $ furina_lovepoints += 10
             # play Effects_one "audio/effects/correct.mp3" noloop
             char.player "{think}She looks so annoyed... but maybe she's not actually mad?{/think}"
             char.furina "{bi}Hmph!{/bi} I-I'm not... not mad! D-Don't get the wrong idea!" 
@@ -62,7 +66,7 @@ label furina_chapter1:
             char.player "That makes me happy to hear, let's enjoy the day together."
 
         "{color=#ff0000}[char.player]{/color}: Relax, Furina. A few minutes isn't going to ruin the day.":
-            $ furina_lovepoint -= 5
+            $ furina_lovepoints -= 5
             char.player "{think}I hope she doesn't hold a grudge... she looks like she could snap any second.{/think}"
             char.furina "Relax? Standing here like a statue while I waited? You really have no shame!"
             char.furina "Do you even understand what it feels like to be kept waiting?!" 
@@ -275,7 +279,7 @@ label furina_chapter1:
     menu:
         char.player "Should I ask her about it?"
         "Yes":
-            $ furina_lovepoint += 5
+            $ furina_lovepoints += 5
             char.player "{think}Maybe I should just ask...{/think}"
             char.player "Hey, Furina... do you think of these outings as... you know, dates?"
             "Her cheeks flare bright red as she looks away, clearly embarrassed but trying to hide it behind her hands."  
@@ -291,7 +295,7 @@ label furina_chapter1:
             char.player "Okay okay, I got it. {think}Look at her acting all defensive, but still enjoying my company.{/think}"
             char.furina "B-but... w-what do you mean by... 'it doesn't really matter to you either way'?!"  
             char.player "Well... It's no lie I love spending time with you, that's all. If you want to think of this as a date, I don't mind at all. That's what I'm trying to say."
-            "Furina freezes for a moment, her cheeks turning bright red, and she glares at you, clearly flustered but also a little pleased." 
+            "Furina freezes for a moment, her cheeks turning bright red, and she glares at you, flustered but also a little pleased." 
             scene furina_chapter1_9_3 with dissolve
             char.furina "I g-guess it can be a d-da-"
             "Before Furina could finish what she was saying, the staff interrupts her by placing the dessert and drink on your table."
@@ -317,7 +321,7 @@ label furina_chapter1:
     if furina_c1_order == 4:
         scene furina_chapter1_10_yes with dissolve
         char.furina "Hm... Not bad... actually, this is perfect! {bi}Just the way I like it!{/bi}" 
-        "She sets the cup down with a satisfied smirk, clearly pleased with your choice."
+        "She sets the cup down with a satisfied smirk, happily sipping away."
         char.player "{think}Looks like I got the order just right... well done, me.{/think}"
         char.furina "See? I knew you could handle it! Don't get used to me being impressed this easily, though."
         char.player "I'll take the praise where I can get it."
@@ -326,7 +330,7 @@ label furina_chapter1:
     else:
         scene furina_chapter1_10_no with dissolve
         char.furina "[char.player]?! This isn't what I asked for!"
-        $ furina_lovepoint -= 5
+        $ furina_lovepoints -= 5
         "She sets the cup down with a frown, crossing her arms and glaring at you, clearly displeased."
         char.player "{think}Oops... looks like I messed up the order.{/think}"
         char.furina "Hmph! I can't believe you got it wrong... You better pay more attention next time!"
@@ -343,7 +347,7 @@ label furina_chapter1:
     char.player "{think}She's really enjoying it. Her excitement makes it impossible not to smile.{/think}"  
     char.player "Looks like it was worth coming here, huh?"  
     char.furina "Of course! I told you, I know the best treats! Hmph! You better savor yours properly too!"  
-    "Furina leans back, crossing her arms but still sneaking bites with a pleased grin, clearly savoring the moment."  
+    "Furina leans back, crossing her arms but still sneaking bites with a grin, clearly savoring the moment."  
     scene furina_chapter1_11_3 with dissolve
     char.furina "*Excitedly* Well?! What do you think of it?!"
     char.player "Mmm... the mousse is so rich and velvety... the texture of the cake is perfect with delicate flavors. Even though it's sweet it's not all that sweet, it's just... right."
@@ -371,53 +375,113 @@ label furina_chapter1:
     char.furina "*Blusing* I think about time we get moving... this place is starting to get crowded, and I don't want our perfect little morning ruined!"
     char.player "Right behind you. Let's go before it gets too busy."  
 
-    # jump scene to other location
     scene furina_chapter1_end1 with fade
     "Walking together toward the bus station, the conversation drifts lazily between small things, laughter, and work."
     char.player "So... what's your plan after this?" 
 
-if furina_lovepoints >= 15:
-    char.furina "I was thinking I could ask you something... but I'm not sure if I should..."  
-    char.player "{think}She seems hesitant... did something happen...? Wait. Did {bi}I{bi} do something?{/think}"  
+    # Min 10, Max 15
+    if furina_lovepoints >= 15:
+        scene furina_chapter1_end2 with dissolve
+        char.furina "I was thinking I could ask you something... but I'm not sure if I should..."  
+        char.player "{think}She seems hesitant... did something happen...? Wait. Did {bi}I{/bi} do something?"  
+        char.furina "N-nothing! Forget it! It's not important!" 
+        char.player "Are you sure? You seem... unsure. If there's anything I did, you can tell me, you know" 
+        scene furina_chapter1_end3 with dissolve
+        char.furina "I w-was just thinking... about what you said earlier in the cafe..."
+        char.player "{think}Which part is she talking about?{/think}"  
+        char.furina "A-about not minding if... we thought of this as a date."  
+        char.player "{think}Ah... so that's what she's hesitating about. I guess she's more conscious of it now that I mentioned it{/think}"  
+        char.player "Should I not have said that earlier? I'm sorry if I made you uncomfortable."
+        char.player "I meant it though. If you want to think of this as a date, I don't mind at all."  
+        scene furina_chapter1_end4 with dissolve
+        "Furina stiffens, her cheeks heating up, and she crosses her arms, huffing loudly."  
+        char.furina "H-Hey! Don't jump to conclusions! It's not like I hate the idea or anything...!"
+        char.player "I'm not jumping to anything. I just wanted to be honest."
+        char.player "I like being with you. That's all."
+        char.furina "R-really...? You don't find me a-annoying?"
+        "She tries to sound casual, but her voice wavers just slightly."
+        char.player "Not even close."
+        char.player "You're loud, dramatic, stubborn... but that's part of what makes you you."
+        char.player "Things feel more vivid when you're around. Besides, why would I let you drag me to places if I didn't enjoy being with you."
+        scene furina_chapter1_end5 with dissolve
+        "Furina looks away quickly, pressing her lips together."
+        char.player "{think}She really does worry about how she comes acros, huh? Who would've known...{/think}"
+        char.furina "I always thought you just put up with me... I-if that's the case..."
+        char.furina "I mean...-"
+        char.player "{think}Does she really have to be this nervous, I'm on edge listening to her too.{/think}"
+        char.furina "It'd be a waste for us to part ways now, right? And it's still midday..."
+        char.furina "So if you're not busy or anything..."
+        scene furina_chapter1_end6 with dissolve
+        "She peeks at you from the corner of her eye, cheeks faintly flushed, her shoulders slightly tense as if bracing herself."
+        "For a brief moment, she looks almost nervous, like she's afraid of what your answer might be."
+        char.furina "I could stay with you a bit longer. Not because I'm attached to you or anything!"
+        char.player "{think}She makes it sound casual, but I can tell it took her a lot just to say that.{/think}"
+        char.player "{think}Maybe I'll suggest this now and see how she reacts... hopefully it won't be too much{/think}"
+        char.player "How about we go back to my place for a bit?"
+        char.player "If you want to, that is."
+        scene furina_chapter1_end7 with dissolve
+        "Furina freezes, her eyes widening just a little."
+        char.furina "Y-your place...?"
+        char.furina "I mean... it's not like I have a problem with it or anything!"
+        char.furina "I've just never been there before, that's all..."
+        scene furina_chapter1_end8 with dissolve
+        "She shifts her weight from one foot to the other, debating with herself."
+        char.furina "Not that I'm nervous! Obviously!"
+        "A brief silence follows, broken only by the distant sounds of the street."
+        char.player "{think}She didn't say no...{/think}"
+        char.player "Alright, it's settled then. Let's get going before it gets too late."
+        scene furina_chapter1_end7 with dissolve
+        char.furina "W-wha? U-um..um... O-okay...!"
+        jump furina_demoContent
+
+        
+        #demo jumps straight to house
+        #real jumps to train for 1.5
+
+        
+
+
+
+
+
+    else:
+        scene furina_chapter1_end9 with dissolve
+        char.furina "I think I'll just head home... it's been a long morning, and I'm feeling a little tired. Thanks for coming along, though!"  
+        char.player "Of course! I had a really good time, Furina." 
+        scene furina_chapter1_end10 with dissolve 
+        char.furina "Hmph! Don't think this means I'm going to ask you out all the time... but yeah, it was nice. I'll see you another time."
+        char.player "{think} You've always asked me every time you want to go somewhere though haha, not that I should mention it. {/think}"
+        char.player "Alright, see you next time."  
+        scene furina_chapter1_end11 with dissolve
+        "She gives a small smile, a faint blush on her cheeks, and you walk together the rest of the way to the bus station."
+        "After a brief goodbye, she boards her bus, leaving you with a warm, lingering feeling from the morning spent together."
+        scene black with fade
     
-    char.furina "{i}Ugh! Fine… I guess I could hang out a bit longer… if you don’t mind!{/i}"  
-    char.player "Of course I don’t mind. I was hoping we could spend some more time together."  
-    char.furina "{i}Hmph! Don’t get used to me being this generous, okay?! But… it’ll be fun, I guess!{/i}"  
-    "You both smile, enjoying the unexpected extension of your morning together, the playful energy between you keeping the walk lively."  
-
-else:
-    char.furina "{i}I think I’ll just head home… it’s been a long morning, and I’m feeling a little tired. Thanks for coming along, though!{/i}"  
-    char.player "Of course! I had a really good time, Furina."  
-    char.furina "{i}Hmph! Don’t think this means I’m going to ask you out all the time… but yeah, it was nice. I’ll see you later, okay?{/i}"  
-    "She gives a small smile, a faint blush on her cheeks, before you both walk the remaining distance to the bus station. The morning air feels calm as you part ways, carrying the warmth of the outing with you."
 
 
 
+label furina_demoContent:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    "rich mousse is very velvety, texture of the cake is great too,delicate flavor ngh munch hmm even though its not all that sweet, its just... right"
-
+    scene furina_demoMovie1 loop with fade
     pause
-    scene black with fade
-    
+    scene furina_demoMovie2 loop with dissolve
+    pause
+    scene furina_demoMovie3 loop with dissolve
+    "test"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     

@@ -49,7 +49,11 @@ label start:
 
 label end_update:
     dev "You have reached the end of this update! Stay tuned for the next version."  
-    dev "If you'd like to support me in making this game, head over to my Patreon. Every bit of support helps!"  
+    dev "If you'd like to support me in making this game, head over to my Patreon."  
     dev "Thanks so much for playing my game, I hope you enjoyed it!"
 
+label end_demo:
+    dev "You have reached the end of the demo! Stay tuned for the next version."  
+    dev "If you'd like to support me in making this game, head over to my Patreon."  
+    dev "Thanks so much for playing my game, I hope you enjoyed what little content it had!"
     return
