@@ -34,7 +34,7 @@ define char.bella = Character("Isabella", color="#eeec83")
 
 
 #===========================================================================================================================
-# Start of game
+# Start of game / End of game
 #===========================================================================================================================
 label start:
     dev "Hey! Thanks for picking up my game to try it out. I'm [dev] and this is my first visual novel, or game rather!"

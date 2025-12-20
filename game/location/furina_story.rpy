@@ -1,11 +1,24 @@
+#===========================================================================================================================
+# Furina variables
+#===========================================================================================================================
 default furina_lovepoints = 0
 default furina_c1_order = 0
 # {color=#d33d3d}[char.player]{/color}
 
+#===========================================================================================================================
+# Furina Video variables
+#===========================================================================================================================
 image furina_demoMovie1 = Movie(play="scenes/furina/furina_demo1.webm")
 image furina_demoMovie2 = Movie(play="scenes/furina/furina_demo2.webm")
 image furina_demoMovie3 = Movie(play="scenes/furina/furina_demo3.webm")
 
+
+
+
+
+#===========================================================================================================================
+# Start of Chapter 1
+#===========================================================================================================================
 label furina_chapter1:
     $ clear_screen()
     stop BGM_one
@@ -82,8 +95,6 @@ label furina_chapter1:
             char.player "Wh-whoa! No need to scream at me, I got it..."
             scene furina_chapter1_3_4 with dissolve
             char.furina "Hmph..."
-
-    # Min 5, Max 10
 
     scene black with fade
     "Furina pushes the door open first, the small bell above jingles as she steps inside"
@@ -379,7 +390,6 @@ label furina_chapter1:
     "Walking together toward the bus station, the conversation drifts lazily between small things, laughter, and work."
     char.player "So... what's your plan after this?" 
 
-    # Min 10, Max 15
     if furina_lovepoints >= 15:
         scene furina_chapter1_end2 with dissolve
         char.furina "I was thinking I could ask you something... but I'm not sure if I should..."  
@@ -438,12 +448,6 @@ label furina_chapter1:
         #demo jumps straight to house
         #real jumps to train for 1.5
 
-        
-
-
-
-
-
     else:
         scene furina_chapter1_end9 with dissolve
         char.furina "I think I'll just head home... it's been a long morning, and I'm feeling a little tired. Thanks for coming along, though!"  
@@ -459,6 +463,9 @@ label furina_chapter1:
     
 
 
+#===========================================================================================================================
+# Demo content tease
+#===========================================================================================================================
 
 label furina_demoContent:
 
@@ -468,7 +475,10 @@ label furina_demoContent:
     pause
     scene furina_demoMovie3 loop with dissolve
     "test"
-
+    "not sure which one to pick, looking at it, 1 is brighter than 3, but 3 is really smooth, 2 is out."
+    jump end_demo
+    $ renpy.run(ShowMenu("save"))
+    return
 
 
 
