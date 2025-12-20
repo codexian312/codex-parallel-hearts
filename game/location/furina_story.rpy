@@ -470,11 +470,20 @@ label furina_chapter1:
 label furina_demoContent:
 
     scene furina_demoMovie1 loop with fade
+    char.player "A-are you sure you're ready for this, Furina...?"
+    char.player "It's not too late to back out you know"
+    char.furina "W-who do you think I-I am... I'm fine... I want this."
+    char.furina "{sc=3}You can p-put it in..."
+    "Furina's voice wavered, trembling slightly as she looked down towards your erected cock."
+    "She fidgeted, biting her lips, and whispered"
+    char.furina "{sc=3} s-slowly...okay...?"
+    char.player "Alright, Furina... here I go."
+
+    
     pause
     scene furina_demoMovie2 loop with dissolve
     pause
     scene furina_demoMovie3 loop with dissolve
-    "test"
     "not sure which one to pick, looking at it, 1 is brighter than 3, but 3 is really smooth, 2 is out."
     jump end_demo
     $ renpy.run(ShowMenu("save"))
