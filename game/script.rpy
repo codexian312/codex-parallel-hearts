@@ -20,7 +20,7 @@ init python:
 #===========================================================================================================================
 # Characters
 #===========================================================================================================================
-define dev = "{color=#ff3e3e}Codexian{/color}"
+define dev = "{color=#c4fbff}Aeries{/color}"
 define Codex = "{color=#f75ed4}Codex{/color}"
 define Codexp = "{color=#f75ed4}Codex: Parallel Hearts{/color}"
 define char.randomOne = Character("???", color="#858aca")
