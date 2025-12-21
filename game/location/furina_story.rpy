@@ -458,6 +458,7 @@ label furina_chapter1:
         scene furina_chapter1_end11 with dissolve
         "She gives a small smile, a faint blush on her cheeks, and you walk together the rest of the way to the bus station."
         "After a brief goodbye, she boards her bus, leaving you with a warm, lingering feeling from the morning spent together."
+        dev "Hmm... maybe you went wrong somewhere? How about you try other options. You might get to see something nice."
         jump end_demo
     
 
