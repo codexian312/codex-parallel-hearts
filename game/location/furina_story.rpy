@@ -8,9 +8,8 @@ default furina_c1_order = 0
 #===========================================================================================================================
 # Furina Video variables
 #===========================================================================================================================
-image furina_demoMovie1 = Movie(play="scenes/furina/furina_demo1.webm")
-image furina_demoMovie2 = Movie(play="scenes/furina/furina_demo2.webm")
-image furina_demoMovie3 = Movie(play="scenes/furina/furina_demo3.webm")
+image furina_demo = Movie(play="scenes/furina/furina_demo.webm")
+
 
 
 
@@ -121,7 +120,7 @@ label furina_chapter1:
     scene furina_chapter1_5_4 with dissolve
     char.player "{think}She's always full of energy and a little bratty, but that's just how she is.{/think}"
     scene furina_chapter1_5_5 with dissolve
-    char.player "{think}She came across this cafe on {bi}Pixagram{/bi} and she insisted that I come along to try it out. Well... more like demaned{/think}"
+    char.player "{think}She came across this cafe on {bi}Pixagram{/bi} and she insisted that I come along to try it out. Well... more like demanded{/think}"
     "Sliding into the seat across from her, you can already feel the warmth of the sunlight hitting the table and the faint scent of freshly baked pastries filling the air." 
     scene furina_chapter1_6_1 with dissolve
     char.furina "Mmm... it smells so nice in here! I can already tell this place is going to be amazing."
@@ -131,7 +130,7 @@ label furina_chapter1:
     "Furina opens her eyes wide and points dramatically at you, a small smirk tugging at her lips."
     scene furina_chapter1_6_2 with dissolve
     char.furina "Their {bi}Chocolate Cake!{/bi} Of course! The best cake in the entire cafe!"  
-    char.furina "{i}I've been craving it all week! You better be ready to enjoy it with me!{/i}"  
+    char.furina "I've been craving it all week! You better be ready to enjoy it with me!"  
     char.player "Isn't this your first time here? How do you know it's the best thing on their menu?"
     char.player "{think}Although her excitement is contagious... it's impossible not to smile at her antics.{/think}"  
     scene furina_chapter1_6_3 with dissolve
@@ -157,7 +156,7 @@ label furina_chapter1:
     char.player "I can see that... you've got me looking forward to this chocolate cake more than I thought I would."  
     char.furina "Good! Now you'll appreciate it properly when it arrives!"  
     char.player "What do you want with it? Coffee? Tea? Any special request?"
-    char.furina "I'll take a Creamy Latte, lots of milk, hold the sugar!"
+    char.furina "I'll take a {bi}Creamy Latte, lots of milk, hold the sugar!"
     char.player "Alright, sit tight. I'll be right back"
     "You stand up from the table, giving Furina one last glance before heading toward the counter."  
     scene furina_chapter1_7_1 with dissolve
@@ -257,12 +256,12 @@ label furina_chapter1:
 
     scene furina_chapter1_8_1 with dissolve
     char.furina "I'm so excited! I can't wait to try it!"
-    char.player "Yeah, it looked mazing from the display. You really know the best spots, huh?"
+    char.player "Yeah, it looked amazing from the display. You really know the best spots, huh?"
     char.furina "Of course! I always find the best treats."
     char.player "Hahaha, that I can believe."
     char.player "Now that I'm settled in, seems like we got here pretty early. Look at this place, there's hardly anyone here."
     scene furina_chapter1_8_2 with dissolve
-    char.furina "I know, right? Perfect timing! No long lines, no noisy crowds... just us and the sweet treats!."
+    char.furina "I know, right? Perfect timing! No long lines, no noisy crowds... just us and the sweet treats!"
     char.player "Yeah, it's actually kind of nice. Feels almost like we have the whole place to ourselves."
     char.furina "Exactly! Now we can really enjoy our orders without anyone bothering us."
     char.player "True. And it's quieter too. Makes it feel more relaxed than I expected."
@@ -340,7 +339,7 @@ label furina_chapter1:
          
     else:
         scene furina_chapter1_10_no with dissolve
-        char.furina "[char.player]?! This isn't what I asked for!"
+        char.furina "{bi}[char.player]?!{/bi} This isn't what I asked for!"
         $ furina_lovepoints -= 5
         "She sets the cup down with a frown, crossing her arms and glaring at you, clearly displeased."
         char.player "{think}Oops... looks like I messed up the order.{/think}"
@@ -383,7 +382,7 @@ label furina_chapter1:
     char.furina "Who said I would be inviting you again?!"
     char.furina "...though, I most likely will"
     char.player "Hahaha I know that, I would never say no to you."
-    char.furina "*Blusing* I think about time we get moving... this place is starting to get crowded, and I don't want our perfect little morning ruined!"
+    char.furina "*Blushing* I think about time we get moving... this place is starting to get crowded, and I don't want our perfect little morning ruined!"
     char.player "Right behind you. Let's go before it gets too busy."  
 
     scene furina_chapter1_end1 with fade
@@ -454,7 +453,7 @@ label furina_chapter1:
         char.player "Of course! I had a really good time, Furina." 
         scene furina_chapter1_end10 with dissolve 
         char.furina "Hmph! Don't think this means I'm going to ask you out all the time... but yeah, it was nice. I'll see you another time."
-        char.player "{think} You've always asked me every time you want to go somewhere though haha, not that I should mention it. {/think}"
+        char.player "{think}You've always asked me every time you want to go somewhere though haha, not that I should mention it."
         char.player "Alright, see you next time."  
         scene furina_chapter1_end11 with dissolve
         "She gives a small smile, a faint blush on her cheeks, and you walk together the rest of the way to the bus station."
@@ -469,7 +468,7 @@ label furina_chapter1:
 
 label furina_demoContent:
 
-    scene furina_demoMovie1 loop with fade
+    scene furina_demo loop with fade
     char.player "A-are you sure you're ready for this, Furina...?"
     char.player "It's not too late to back out you know"
     char.furina "W-who do you think I-I am... I'm fine... I want this."
@@ -478,13 +477,6 @@ label furina_demoContent:
     "She fidgeted, biting her lips, and whispered"
     char.furina "{sc=3} s-slowly...okay...?"
     char.player "Alright, Furina... here I go."
-
-    
-    pause
-    scene furina_demoMovie2 loop with dissolve
-    pause
-    scene furina_demoMovie3 loop with dissolve
-    "not sure which one to pick, looking at it, 1 is brighter than 3, but 3 is really smooth, 2 is out."
     jump end_demo
     $ renpy.run(ShowMenu("save"))
     return

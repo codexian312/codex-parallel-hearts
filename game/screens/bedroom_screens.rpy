@@ -31,4 +31,4 @@ screen computer_screen:
         ypos 284
         idle "bedrooms/hero/codex_icon.png"
         hover "bedrooms/hero/codex_iconSelect.png"
-        action Jump("codex_start")
+        action [Play("Effects_one", "audio/effects/mouse_click.mp3", loop=False), Jump("codex_start")]

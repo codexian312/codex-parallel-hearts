@@ -1,40 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/location/furina_story.rpy", line 467, in script
-    play furina_demoMovie1 loop
-  File "renpy/common/000statements.rpy", line 124, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "game/location/furina_story.rpy", line 467, in <module>
-    play furina_demoMovie1 loop
-NameError: name 'loop' is not defined
+After initialization, but before game start.
+  File "game/screens/bedroom_screens.rpy", line 25, in prepare_screen
+    screen computer_screen:
+  File "game/screens/bedroom_screens.rpy", line 25, in prepare
+    screen computer_screen:
+  File "game/screens/bedroom_screens.rpy", line 29, in prepare
+    imagebutton:
+  File "game/screens/bedroom_screens.rpy", line 29, in prepare
+    imagebutton:
+SyntaxError: invalid syntax (game/screens/bedroom_screens.rpy, line 34)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/location/furina_story.rpy", line 467, in script
-    play furina_demoMovie1 loop
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 124, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/location/furina_story.rpy", line 467, in <module>
-    play furina_demoMovie1 loop
-NameError: name 'loop' is not defined
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\display\screen.py", line 1027, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens/bedroom_screens.rpy", line 25, in prepare_screen
+    screen computer_screen:
+  File "game/screens/bedroom_screens.rpy", line 25, in prepare
+    screen computer_screen:
+  File "game/screens/bedroom_screens.rpy", line 29, in prepare
+    imagebutton:
+  File "game/screens/bedroom_screens.rpy", line 29, in prepare
+    imagebutton:
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\py3analysis.py", line 803, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/screens/bedroom_screens.rpy, line 34)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Codex: Parallel Hearts demo
-Sat Dec 20 12:12:22 2025
+Sun Dec 21 01:07:03 2025

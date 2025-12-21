@@ -31,7 +31,7 @@ label codex_start:
         
         if not char.playerInput:
             dev "No name entered. Defaulting to \"Hero\"."
-            $ char_player = "Hero"
+            $ char.player = "Hero"
         else:
             $ char.player = char.playerInput
 
@@ -40,7 +40,7 @@ label codex_start:
         $ initial_startup = True
 
         Codex "Welcome player {b}[char.player]{/b}. Have fun and immerse yourself in everything this adventure has to offer."
-        dev "This is a demo release of the game. Only Furina's Chapter 1 content is available."
+        dev "This is a demo release of the game. Only Furina's first content is available."
 
         char.player "Alright... let's dive in and see what this is all about."
         jump furina_chapter1

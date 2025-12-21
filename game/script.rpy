@@ -53,6 +53,7 @@ label end_update:
     dev "Thanks so much for playing my game, I hope you enjoyed it!"
 
 label end_demo:
+    scene black with fade
     dev "You have reached the end of the demo! Stay tuned for the next version."  
     dev "If you'd like to support me in making this game, head over to my Patreon."  
     dev "Thanks so much for playing my game, I hope you enjoyed what little content it had!"
