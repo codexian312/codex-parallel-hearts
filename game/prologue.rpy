@@ -1,10 +1,19 @@
 #===========================================================================================================================
+# Video variables
+#===========================================================================================================================
+image train_ride = Movie(play="scenes/train/train_ride.webm", loop=True)
+
+#===========================================================================================================================
 # Prologue
 #===========================================================================================================================
+
+
+
 label prologue_1:
+    $ clear_screen()
     scene prologue_office_1 with fade 
-    play Ambience_one "audio/ambience/Office_Groove.mp3" loop
-    "The office was quiet late in the day. The light from the screens flickered faintly, reflecting off the polished desks."
+    play Ambience_one "audio/ambience/office_groove.mp3" loop
+    "The office was quiet this late in the day. The light from the screens flickered faintly, reflecting off the polished desks."
     "The soft clicks of keyboards filled the room, with the air conditioning vents running steadily followed by the printer occasionally in the distance."
     you "{think}Almost time to clock out... It's been one of those long, endless days.{/think}"
     you "{think}Just a few more tasks, and then freedom... {/think}"
@@ -61,7 +70,7 @@ label prologue_1:
     char.bella "Haha, fair point. Don't want to get in trouble on the last day of the week."
     you "Aren't you going to try the game this weekend? Weren't you interested in it too?"
     scene prologue_office_2 with dissolve
-    char.bella "That I am of course, but my sister is coming to visit this week. I'll be busy catering her to spend time by myself"
+    char.bella "That I am of course, but my sister is coming to visit this week. I'll probably be busy spending time with her to actually play though."
     you "Got it. Family time is important, can't argue with that."
     char.bella "Yeah and... I can't exactly play that kind of game with my sister around"
     you "Also can't argue with that..."
@@ -80,6 +89,83 @@ label prologue_1:
     char.bella "Have a nice weekend, enjoy your game!"
     you "Thanks, Bella. you too."
     scene prologue_office_empty with dissolve
+    play Effects_one "audio/effects/footstep_short.mp3" noloop volume 2
     you "{think}Finally... done for the day. Time to close up, head home, and finally see what this [Codex] is all about."
 
-    jump prologue_train
+    scene train_ride with fade
+    play Ambience_one "audio/ambience/train_ambience.mp3" loop
+    "The train pulls out of the station, metal wheels grinding against the tracks as the cars fill with noise"
+    you "{think}I hate leaving work at this time, especially on Friday. The train is always so crowded"
+    you "{think}Luckily I managed to get a seat this time"
+    "You lean back slightly, watching the city lights streak past the windows."
+    you "{think}After a day like today, my thoughts still drift back to Bella. I'm genuinely shocked she was excited for the game."
+    you "{think}I still remember the first time we met."
+    you "{think}It was our first day at the company, everything felt so overwhelming. We were basically dragged around as a pair getting trained at the same time."
+    stop Ambience_one fadeout 1.0
+
+    show prologue_memory_1 with dissolve
+    play Ambience_two "audio/ambience/office_groove.mp3" loop
+    npc.boss "Alright everyone, if I could get your attention for a moment."
+    "The chatter in the room slowly dies down as people turn toward you."
+    npc.boss "We have two new members joining the team starting today."
+    show prologue_memory_2 with dissolve
+    "You both glance at each other, offering an awkward but reassuring smile."
+    npc.boss "I expect everyone to help them settle in and show them how things work around here."
+    npc.boss "Why do you not come up here and introduce yourselves."
+    
+    $ char.playerInput = renpy.input("Enter your name:").strip()
+    
+    if not char.playerInput:
+        dev "No name entered. Defaulting to \"Hero\"."
+        $ char.player = "Hero"
+    else:
+        $ char.player = char.playerInput
+    $ persistent.player_name = char.player
+    $ char.player = Character(char.player, color="#ff0000")
+
+    show prologue_memory_3 with dissolve
+    char.player "Uh, hello everyone. My name is [char.player]. It is nice to meet you all."
+    "A few polite nods and murmurs follow."
+    npc.boss "And you."
+    char.bella "Hi. I am Isabella, I'm looking forward to working with all of you."
+    "Her voice is calm, but you can tell she is more nervous than you are."
+    show prologue_memory_4 with dissolve
+    npc.boss "Good. Welcome to the team. You two will be training together for the next few weeks."
+    show prologue_memory_2 with dissolve
+    char.bella "*Softly* Guess we are in this together."
+    char.player "*Soft chuckle* Looks like it."
+    npc.boss "For now, just follow me. I will give you a quick tour and get you settled."
+    "The meeting breaks up, and people slowly return to their desks."
+
+    scene train_ride loop with fade
+    stop Ambience_two fadeout 1.0
+    play Ambience_one "audio/ambience/train_ambience.mp3" loop
+    "The memory fades as the train rocks gently beneath you."
+    char.player "{think}Hard to believe that was 2 years ago. Back then, she was just a stranger standing beside me."
+    char.player "{think}We barely exchanged a few words, both of us were busy trying to learn everything together."
+    char.player "{think}Somewhere along the way, those awkward introductions turned into familiar routines."
+    char.player "{think}Coffee breaks that started as small talk became something I looked forward to."
+    char.player "{think}Now it is hard to imagine the office without her."
+    play Effects_one "audio/effects/phone_buzz.mp3" noloop
+    char.player "Hm?"
+    "You take your phone out and check the screen."
+    show phone_ui at top with dissolve
+    char.player "{think}It's a message from Bella. What does she want?"
+    show bella_text_pre1 at top with dissolve
+    char.player "{think}An image?"
+    play Effects_one "audio/effects/screen_tap.mp3" noloop volume 4
+    "You tap on the message."
+    
+    hide phone_ui
+    hide bella_text_pre1
+    show phone_bella_airport1 at top with dissolve
+    char.player "{think}Looks like she made it in time. Glad she got there before the plane landed."
+    char.player "{think}At least she will not be rushing."
+    "You turn the phone off and slip it back into your pocket."
+    play Effects_one "audio/effects/phone_lock.mp3" noloop
+    hide phone_bella_airport1 with dissolve
+    "The train begins to slow, the familiar announcement echoing through the car."
+    char.player "{think}This is my stop."
+    "You stand up as the doors slide open, stepping out with the flow of people."
+    stop Ambience_one
+    jump hero_bedroom

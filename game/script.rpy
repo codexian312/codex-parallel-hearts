@@ -26,6 +26,7 @@ define Codexp = "{color=#f75ed4}Codex: Parallel Hearts{/color}"
 define char.randomOne = Character("???", color="#858aca")
 define you = Character("You")
 define npc.staff = Character("Staff")
+define npc.boss = Character("Boss")
 
 default persistent.player_name = ""
 define char.furina = Character("Furina", color="#9bd6e0")
@@ -43,18 +44,13 @@ label start:
     dev "This project is just the beginning! I hope you enjoy exploring the Codex and these reimagined worlds as much as I enjoyed creating them."
     dev "Your choices, your stories, your hearts, welcome to the [Codex]"
 
-    dev "Disclaimer: This is a demo version. Gameplay and story do not represent the final or released version of the game."
     
-    jump hero_bedroom
+    jump prologue_1
 
 label end_update:
     dev "You have reached the end of this update! Stay tuned for the next version."  
     dev "If you'd like to support me in making this game, head over to my Patreon."  
     dev "Thanks so much for playing my game, I hope you enjoyed it!"
 
-label end_demo:
-    scene black with fade
-    dev "You have reached the end of the demo! Stay tuned for the next version."  
-    dev "If you'd like to support me in making this game, head over to my Patreon."  
-    dev "Thanks so much for playing my game, I hope you enjoyed what little content it had!"
+
     return

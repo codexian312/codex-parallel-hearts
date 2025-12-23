@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/location/furina_story.rpy", line 371: expected statement.
-    end with scane black with fade
+File "game/location/furina_story.rpy", line 580: expected statement.
+    else:
         ^
 
-File "game/location/furina_story.rpy", line 372: expected statement.
-    narration on eating, enjoy each other company, finish cake, get ready to leave
-                       ^
-
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Dec 20 07:34:46 2025
+Tue Dec 23 06:27:44 2025

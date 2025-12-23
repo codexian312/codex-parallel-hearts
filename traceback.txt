@@ -1,48 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens/bedroom_screens.rpy", line 25, in prepare_screen
-    screen computer_screen:
-  File "game/screens/bedroom_screens.rpy", line 25, in prepare
-    screen computer_screen:
-  File "game/screens/bedroom_screens.rpy", line 29, in prepare
-    imagebutton:
-  File "game/screens/bedroom_screens.rpy", line 29, in prepare
-    imagebutton:
-SyntaxError: invalid syntax (game/screens/bedroom_screens.rpy, line 34)
+While running game code:
+  File "game/location/furina_story.rpy", line 666, in script
+    jump end_demo
+ScriptError: could not find label 'end_demo'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\display\screen.py", line 1027, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens/bedroom_screens.rpy", line 25, in prepare_screen
-    screen computer_screen:
-  File "game/screens/bedroom_screens.rpy", line 25, in prepare
-    screen computer_screen:
-  File "game/screens/bedroom_screens.rpy", line 29, in prepare
-    imagebutton:
-  File "game/screens/bedroom_screens.rpy", line 29, in prepare
-    imagebutton:
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\py3analysis.py", line 803, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1153, in py_compile
-    raise e
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1090, in py_compile
-    raise orig_e
-  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\python.py", line 1082, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/screens/bedroom_screens.rpy, line 34)
+  File "game/location/furina_story.rpy", line 666, in script
+    jump end_demo
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "F:\RenPy Stuff\renpy-8.2.3-sdk\renpy-8.2.3-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'end_demo'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Codex: Parallel Hearts demo
-Sun Dec 21 01:07:03 2025
+Tue Dec 23 08:25:18 2025

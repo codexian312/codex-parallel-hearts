@@ -65,3 +65,22 @@ init python:
         return new_list
 
     config.custom_text_tags["sc"] = scare_tag
+
+    #===========================================================================================================================
+    # Scared/Shaky text (Big version)
+    #===========================================================================================================================
+    def sc_big_tag(tag, argument, contents):
+        if argument == "":
+            argument = 5  # default shake intensity
+        new_list = []
+        for kind, text in contents:
+            if kind == renpy.TEXT_TEXT:
+                for char in text:
+                    # Apply Text with size 40
+                    char_disp = ScareText(renpy.text.text.Text(char, size=40), int(argument))
+                    new_list.append((renpy.TEXT_DISPLAYABLE, char_disp))
+            else:
+                new_list.append((kind, text))
+        return new_list
+
+    config.custom_text_tags["sc_big"] = sc_big_tag

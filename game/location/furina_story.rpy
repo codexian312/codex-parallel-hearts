@@ -3,16 +3,29 @@
 #===========================================================================================================================
 default furina_lovepoints = 0
 default furina_c1_order = 0
+default furina_chapter1_done = False
 # {color=#d33d3d}[char.player]{/color}
 
 #===========================================================================================================================
 # Furina Video variables
 #===========================================================================================================================
 image furina_demo = Movie(play="scenes/furina/furina_demo.webm")
+image furina_sex1_1 = Movie(play="scenes/furina/furina_chapter1_kiss.webm")
+image furina_sex1_2 = Movie(play="scenes/furina/furina_chapter1_strip.webm",loop=False)
+image furina_sex1_3 = Movie(play="scenes/furina/furina_chapter1_braless.webm", loop=False)
+image furina_sex1_4 = Movie(play="scenes/furina/furina_grope1.webm")
 
 
-
-
+label furina_chapterSelect:
+    $ clear_screen()
+    menu:
+        "Select Chapter"
+        "Chapter 1 - Cafe Date":
+            play Effects_one "audio/effects/game_start.mp3" noloop volume 2
+            jump furina_chapter1
+        "Chapter 2 - WIP" if furina_chapter1_done == True:
+            "Currently WIP"
+            jump hero_bedroom
 
 
 #===========================================================================================================================
@@ -441,11 +454,182 @@ label furina_chapter1:
         char.player "Alright, it's settled then. Let's get going before it gets too late."
         scene furina_chapter1_end7 with dissolve
         char.furina "W-wha? U-um..um... O-okay...!"
-        jump furina_demoContent
 
+        scene furina_c1_walk1 with fade
+
+        # play BGM_one "audio/bgm/night_out.mp3" loop
+        play Ambience_one "audio/ambience/night_ambience.mp3" loop volume 5
+        "There was quite a lot of people for how quiet it is. You and Furina walked side by side, the city noise thinning with every step."
+        scene furina_c1_walk2 with dissolve
+        char.furina "W-whats... your plan inviting me to your place? You're not expecting anything weird, are you?"
+        char.player "Nothing really. You said you wanted to spend more time with me but I also don't mind going somewhere else too, if you want."
+        char.furina "Hmph! Don't get the wrong idea! It''s not like I wanted to come or anything... I just didn't feel like being bored alone, okay!?"
+        scene furina_c1_walk3 with dissolve
+        "She turned her face away, hands tucked behind her as she fidgeted. The faint pink in her cheeks betrayed her far more than her tone."
+        char.player "{think} She never says what she actually means. Look at her just fidgetting trying to hide it"
+        scene furina_c1_walk4 with dissolve
+        char.player "{think} Maybe she just needs a push."
+        char.player "Pfft-hahaha. You're still okay pretending that? How about you be honest with your feelings for once?"
+        char.player "If you didn't enjoy spending time with me, why drag me all over town to try out cafes?"
+        char.furina "W-well..."
+        scene furina_c1_walk3 with dissolve
+        char.furina "T-that's-! That's completely different!"
+        char.furina "I just needed someone reliable, that's all! Don't twist it into something weird!"
+        "Her voice sharpened, then wavered at the very end."
+        char.player "Oh, you just needed someone reliable?"
+        char.player "How about I call a police officer and have her come take care of you instead?"
+        scene furina_c1_walk5 with dissolve
+        "Furina froze."
+        scene furina_c1_walk6 with dissolve
+        char.furina "W-what—!? D-don't you dare!"
+        char.furina "That's not what I meant! I wasn't talking about that kind of reliable!"
+        "She turned toward you sharply, hands clenched at her sides, clearly flustered."
+        char.furina "B-besides! I-I'm perfectly capable! You don't need to call anyone!"
+        scene furina_c1_walk7 with dissolve
+        char.player "*Chuckles* Relax. I'm kidding."
+        char.player "If you really wanted someone else, you wouldn't have dragged me out five times already."
+        scene furina_c1_walk8 with dissolve
+        "She opened her mouth to argue, then stopped."
+        char.furina "T-that's...! That's because you're—!"
+        char.furina "Ugh... forget it! You're impossible."
+        char.player "{think} She might seem like this, but she cares more than she lets on. Should I say something?"
+
+        menu:
+            "Should I say something?"
+
+            "{color=#d33d3d}[char.player]{/color}: You choose to stay quiet, letting the moment pass without comment.":
+                $ furina_lovepoints -= 5
+                char.furina "Hmph..."
+                scene furina_c1_walk9 with dissolve
+                "She huffs and walks beside you, slightly stiff, as if disappointed you didn't notice her feelings."
+
+            "{color=#d33d3d}[char.player]{/color}: I understand, I know you like the time with me but...":
+                $ furina_lovepoints += 5
+                char.player "I know you're too embarrassed to be honest and say it out loud."
+                scene furina_c1_walk10 with dissolve
+                char.furina "You're r-right... I do! I just... I don't like saying it!"
+                char.player "{think}At least she's being more honest now that I'm pushing her."
+
+
+            "{color=#d33d3d}[char.player]{/color}: Haha, I can see right through you, you brat":
+                $ furina_lovepoints += 10
+                char.player "I can tell when you're pretending you don't care."
+                scene furina_c1_walk11 with dissolve
+                char.furina "{sc_big=5}W-WHO are you calling a b-brat?!{/sc_big}"
+                char.furina "I-I'm not a brat! I just... I just don't like admitting things like that out loud! It makes me feel... shy..."
+                scene furina_c1_walk9 with dissolve
+                "Her cheeks flare, and she crosses her arms tighter clearly embarrassed but can't deny it completely."
+                char.player "Yep... definitely a brat. Not that I mind."
+                scene furina_c1_walk12 with dissolve
+                "Her shoulders stiffen, and she shifts her weight, trying to regain composure while glaring at you."
+                char.furina "Y-y-y-you!"
+            
+        "Furina huffed, trying to regain her composure, but you could tell she was still flustered."
+        scene furina_c1_walk13 with dissolve
+        "The sidewalk was busy for such a quiet street, and a pair of pedestrians passed in the opposite direction."
+        char.player "{think}I should probably move out of there way..."
+        scene furina_c1_walk14 with dissolve
+        "You shifted slightly to give them room, accidentally bumping into Furina."
+        scene furina_c1_walk15 with dissolve
+        char.furina "H-hey watch it! You're way t-too close..."
+        char.player "Oh sorry, I didn't mean to bump into you, i was just making space for the other people"
+        char.furina "I-I know that..."
+        scene furina_c1_walk16 with dissolve
+        char.player "{think}I don't think she noticed my arm is brushing against her boobs right now."
+        char.player "{think}But man... she is really flaunting them out today, isn't she..."
+        scene furina_c1_walk16_a with dissolve
+        char.player "{think}Just imagine burying my face into those."
+        $ first_two = char.player.name[:2]
+        char.furina "{size=12}[first_two]...?"
+        char.player "{think}Bet it'd be so heavenly."
+        $ first_four = char.player.name[:4]
+        char.furina "{size=16}[first_four]...?"
+        scene furina_c1_walk16_b with dissolve
+        char.player "{think}I can imagine her perky nips getting hard if I suck them..."
+        char.furina "{size=22}[char.player]!"
+        char.player "{think}If I properly ask her, I wonder if she w-"
+        "You were lost in your thoughts, barely noticing as Furina reached up, placing her hands firm on your cheeks to force you to look at her."
+        scene furina_c1_walk16_c with dissolve
+        char.furina "{size=33}[char.player]!"
+        char.player "H-huh, what did you say?"
+        char.furina "H-hey! Why are you spacing out like that? It's a bit dangerous walking and not looking forward."
+        char.furina "What are you even looki-"
+        scene furina_c1_walk16_e with dissolve
+        pause
+        scene furina_c1_walk16_f with dissolve
+        "Her words faltered as her eyes widened, and she realized exactly what you were looking at. She froze for a moment, a faint pink creeping across her cheeks."
+        char.furina "W-what...? Y-you were... looking at me?!"
+        char.player "{think}Busted... she noticed. Better play it cool."
+        char.player "Uh... I wasn't... I mean... it was... "
+        char.player "I was just thinking... those clothes make them really noticable."
+        char.furina "Th-they do...? I wasn't... aware of that..."
+        char.player "Especially now that we agreed this was a date, I'm seeing you in a new light. You look so fucking sexy, Furina."
+        scene furina_c1_walk16_g with dissolve
+        "Furina's mind went blank, and she couldn't form a single word. Her wide eyes gave away everything she wasn't saying."
+        char.furina "W-what...? Y-you're saying that... to me?!"
+        char.player "{think}Wow she was speechless... that reaction's priceless."
+        "You just give Furina a faint smile while sending more glances down at her chest"
+        char.player "Hahaha I'll stop there for now. I'm sorry for teasing you like that, I'll move away from you now"
+        scene furina_c1_walk17 with dissolve
+        play Effects_one "audio/effects/shirt_tug.mp3" noloop volume 2
+        "You started to step away but before you could, you felt a small tug at your sleeve."
+        char.furina "I n-never said it wasn't... o-okay... I was just... s-startled. That's all..."
+        scene furina_c1_walk18 with dissolve
+        char.player "{think} I did not expect that at all. Holy shit I'm so happy."
+        scene furina_c1_walk19 with dissolve
+        "Her hand lingered on your sleeve for a moment before she subtly laced her fingers with yours. She didn't pull away, even though her cheeks flushed pink."
+        char.furina "D-don't read into it... it's just... crowded. So you won't b-bump into me accidentally again..."
+        char.player "{think}Yeah, sure... crowded. So that's the excuse she's going with."
+        char.player "{think}But I am surprised she is taking the initiative."
+        char.player "Of course. Crowded... You know you can be a such cute brat when you're honest."
+        scene furina_c1_walk20 with dissolve
+        char.furina "S-shut up!"
+        "She walked beside you, fingers lightly intertwined with yours, matching your pace as the streets grew quieter."
+        stop BGM_one
+        play Ambience_one "audio/ambience/train_ambience.mp3" loop
+        scene black with fade
+
+        "Up ahead, the familiar outline of the train station appeared, lights flickering as the afternoon sun settled in."
+        char.player "Looks like we're here just in time. Ready to board?"
+        char.furina "Y-yeah... I guess so."
+        "Together, you stepped onto the platform, the low rumble of the approaching train growing louder. People moved around you both, but you and Furina stayed close."
+        "Finally, the train arrived, its doors sliding open with a loud clank."
+        scene furina_c1_train1 with dissolve
+        "Hand in hand, you both stepped inside the train. The car was packed with passengers but you managed to find a small corver with empty seats to yourselves"
+        "Once seated, Furina did something completely unexpected"
+        scene furina_c1_train2 with dissolve
+        "She linked her arm with yours, gripping your hand tightly. She rested her head gently on your shoulder, while her other hand came to rest on top of yours."
+        char.player "{think}She was so flustered from me calling her sexy earlier... and look at her now."
+        char.player "F-Furina?"
+        char.furina "{size=20}W-w-what is it...?"
+        scene furina_c1_train3 with dissolve
+        "Her voice was barely above a whisper, and her cheeks had taken on a soft pink hue. She peeked up at you from under her lashes, clearly nervous about being this close."
+        char.player "{think}She's pushing herself to be honest, but now she looks completely vulnerable. It's kind of incredible."
+        char.player "N-nothing... I just... you're really close."
+        scene furina_c1_train4 with dissolve
+        "Furina shifted slightly, pressing her head a little more against your shoulder, her fingers tightening on yours ever so lightly."
+        char.furina "I-I... I guess it's... fine like this... I kinda like it..."
+        char.furina "This is all very new to me... it feels strange, but I don't hate it."
+        char.player "Strange how? Because you're stuck on me? Or... because of what I said earlier?"
+        scene furina_c1_train5 with dissolve
+        char.furina "B-both... maybe... I'm not used to... feeling this way with someone."
+        char.player "{think}She's really letting herself be open now... it's kind of amazing seeing this side of her."
+        char.player "You can take your time and sort out your feelings. We can talk more once we're alone, for now you can just rest."
+        char.furina "That... sounds nice, I'll borrow your shoulders for a bit..."
+        char.player "{think}Her trust in me... it feels... special. I hope she knows I'm not going anywhere."
+        char.player "If only you're always this cute and honest. Why even bother putting up a front."
+        scene furina_c1_train3 with dissolve
+        char.furina "...Hush you."
+        scene furina_c1_train2 with dissolve
+        "Furina closed her eyes again, relaxing into your shoulder, the warmth between you both comforting and quiet amidst the moving train."
         
-        #demo jumps straight to house
-        #real jumps to train for 1.5
+
+
+
+
+
+
+                
 
     else:
         scene furina_chapter1_end9 with dissolve
@@ -458,8 +642,9 @@ label furina_chapter1:
         scene furina_chapter1_end11 with dissolve
         "She gives a small smile, a faint blush on her cheeks, and you walk together the rest of the way to the bus station."
         "After a brief goodbye, she boards her bus, leaving you with a warm, lingering feeling from the morning spent together."
+        scene black with fade
         dev "Hmm... maybe you went wrong somewhere? How about you try other options. You might get to see something nice."
-        jump end_demo
+        jump codex_charSelection
     
 
 
@@ -489,7 +674,23 @@ label furina_demoContent:
 
 
 
-
+    scene furina_sex1_1 with fade 
+    pause
+    scene furina_sex1_afterkiss with dissolve
+    pause
+    scene furina_sex1_2 with dissolve
+    pause 3.5
+    scene furina_sex1_afterstrip
+    pause
+    scene furina_sex1_bra with dissolve
+    pause
+    scene furina_sex1_3 with dissolve
+    pause 1
+    show furina_sex_braless with dissolve
+    pause
+    scene furina_sex1_4 with fade
+    pause
+    "test"
 
 
 
