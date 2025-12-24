@@ -1143,36 +1143,69 @@ style help_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
 screen confirm(message, yes_action, no_action):
-
-    ## Ensure other screens do not get input while this screen is displayed.
     modal True
+    window:
+        style "gm_root"
 
-    zorder 200
+    # --------------------------------------------------
+    # Quit UI
+    # --------------------------------------------------
+    if message == gui.QUIT:
+        add "gui/overlay/quit_confirm.png"
+        imagebutton:
+            xpos 631 
+            ypos 443
+            idle "gui/overlay/yes_idle.png"      
+            hover "gui/overlay/yes_hover.png"   
+            action yes_action
 
-    style_prefix "confirm"
+        imagebutton:
+            xpos 1107  
+            ypos 442
+            idle "gui/overlay/no_idle.png"      
+            hover "gui/overlay/no_hover.png"    
+            action no_action
 
-    add "gui/overlay/confirm.png"
+    # --------------------------------------------------
+    # Back to main menu UI
+    # --------------------------------------------------
+    if message == gui.MAIN_MENU:
+        timer 0.001 action yes_action
 
-    frame:
 
-        vbox:
-            xalign .5
-            yalign .5
-            spacing 45
+        key "game_menu" action no_action
 
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
+    # --------------------------------------------------
+    # DEFAULT CONFIRM (ALL OTHER CASES)
+    # --------------------------------------------------
+    else:
 
-            hbox:
-                xalign 0.5
-                spacing 150
+        ## Everything below here is basically the Ren'Py default
+        frame:
+            style_prefix "confirm"
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+            xfill True
+            xmargin 50
+            ypadding 25
+            yalign .25
 
-    ## Right-click and escape answer "no".
-    key "game_menu" action no_action
+            vbox:
+                xfill True
+                spacing 25
+
+                ## Message text (delete save, overwrite, load, etc.)
+                text _(message):
+                    textalign 0.5
+                    xalign 0.5
+
+                ## Yes / No buttons (default behavior)
+                hbox:
+                    spacing 100
+                    xalign .5
+
+                    textbutton _("Yes") action yes_action
+                    textbutton _("No") action no_action
+
 
 
 style confirm_frame is gui_frame

@@ -9,11 +9,11 @@ default furina_chapter1_done = False
 #===========================================================================================================================
 # Furina Video variables
 #===========================================================================================================================
-image furina_demo = Movie(play="scenes/furina/furina_demo.webm")
-image furina_sex1_1 = Movie(play="scenes/furina/furina_chapter1_kiss.webm")
-image furina_sex1_2 = Movie(play="scenes/furina/furina_chapter1_strip.webm",loop=False)
-image furina_sex1_3 = Movie(play="scenes/furina/furina_chapter1_braless.webm", loop=False)
-image furina_sex1_4 = Movie(play="scenes/furina/furina_grope1.webm")
+image furina_c1_wallslam = Movie(play="scenes/furina/furina_c1_wallslam.webm", loop=False)
+image furina_c1_kiss = Movie(play="scenes/furina/furina_c1_kiss.webm")
+image furina_c1_braless = Movie(play="scenes/furina/furina_c1_braless.webm", loop=False)
+image furina_c1_b3 = Movie(play="scenes/furina/furina_c1_b3.webm", loop=True)
+image furina_c1_b4 = Movie(play="scenes/furina/furina_c1_b4.webm", loop=True)
 
 
 label furina_chapterSelect:
@@ -258,7 +258,6 @@ label furina_chapter1:
                     pass
                 "Two spoons":
                     pass
-
         
     scene furina_chapter1_7_1 with dissolve
     npc.staff "Great! I'll get that prepared for you right away."
@@ -326,7 +325,6 @@ label furina_chapter1:
             char.player "{think}Nah... probably best not to push it.{/think}"
             "After a short wait, the staff returns carrying a tray with your dessert and drink."
             
-
     npc.staff "Here you go. A Triple Chocolate Mousse Cake, and your drinks. Please enjoy!"
     scene furina_chapter1_10_1 with dissolve
     char.player "Thank you!"
@@ -510,7 +508,6 @@ label furina_chapter1:
                 char.furina "You're r-right... I do! I just... I don't like saying it!"
                 char.player "{think}At least she's being more honest now that I'm pushing her."
 
-
             "{color=#d33d3d}[char.player]{/color}: Haha, I can see right through you, you brat":
                 $ furina_lovepoints += 10
                 char.player "I can tell when you're pretending you don't care."
@@ -622,14 +619,172 @@ label furina_chapter1:
         char.furina "...Hush you."
         scene furina_c1_train2 with dissolve
         "Furina closed her eyes again, relaxing into your shoulder, the warmth between you both comforting and quiet amidst the moving train."
+
+        scene black with fade
+        $ stop_allsound()
+        "After a quiet journey back, you eventually arrived."
+        play Ambience_one "audio/ambience/love1.mp3" loop
+        scene furina_c1_home1 with dissolve
+        "You stepped inside, the door closing gently behind you. The room was quiet, broken only by the subtle sound of Furina's clothes as she shifted nervously beside you."
+        char.player "{think}She's being quiet since the train ride... this is getting awkward for me. Should I say something?"
+        char.player "{think}I can't tell what she's thinking about."
+        scene furina_c1_home2 with dissolve
+        char.player "{think}In my case, throughout the ride back. I couldn't stop thinking about how soft those were..."
+        scene furina_c1_home3 with dissolve
+        char.player "{think}I'm almost certain she purposely pushed my arms into them. I should break the silence, maybe offer her a drink or something..."
+        "You decided it was time to break the heavy silence."
+        char.player "Hey F-"
+        scene furina_c1_home4 with dissolve
+        char.furina "D-Did you really... really mean what you said earlier? About me being se-sexy?"
+        char.player "Absolutely, you're stunning. I'm happy to have been spending time with you today."
+        char.furina "R-right... n-no one has really said that to me before."
+        char.player "*Chuckles* I can imagine."
+        scene furina_c1_home5 with dissolve
+        char.furina "Wh-what do you mean, \"I can imagine\"?!"
+        "she glares at you, visibly disappointed by what you said"
+        char.furina "A-are you saying I have zero c-c-charm...?"
+        char.player "Not at all. I actually kind of like it, your stubborn, haughty attitude is... part of what makes you so captivating."
+        scene furina_c1_home6 with dissolve
+        "Her attitude shifts slight as you continue."
+        char.player "Most people might struggle with it, but like I said. I find it... kind of charming. That's why I said I can imagine."
+        char.furina "I-I... I don't know what to say..."
+        scene furina_c1_home4 with dissolve
+        char.furina "Deep down I always knew... most people just put up with me. B-But hearing you say that... it's reassuring."
+        char.player "Furina..."
+        char.player "{think}I'm glad she trusts me enough to open up."
+        char.player "You don't have to hold back, you can be yourself around me. I'm not putting up with anything."
+        char.player "I genuinely like that about you."
+        scene furina_c1_home6 with dissolve
+        char.furina "That... that means a lot coming from you, thank you."
+        char.player "It's just the truth about how I feel."
+        "You both give each other a soft smile"
+        scene furina_c1_home5 with dissolve
+        char.furina "Th-that aside! Don't think I didn't notice you've been glancing at my chest again!"
+        char.player "I c-can't help it, you're the one who keeps pushing it against my arms on the train!"
+        char.furina "{sc_big=2}I-...I did no such things!"
+        char.player "Really now? I find that very hard to believe... you kept at it the whole ride."
+        scene furina_c1_home7 with dissolve
+        char.furina "W-well... ma-maybe just a little bit..."
+        char.player "{think}I knew it! This rascal, she needs to be punished for teasing me like that!"
+        char.player "{think}See how you like this."
+        show furina_c1_wallslam with dissolve
+        pause 0.5
+        show furina_c1_wallend  
+        "You step closer to her, placing your hand firmly on the wall beside her."
+        "Furina's eyes widen, a mix of surprise and fluster crossing her face as she realizes there's no escaping."
+        char.furina "...!"
+        char.player "{think}I can hear her heartbeat's racing..."
+        "She gazes at you with hope in her eyes, staying still and meeting your gaze as if welcoming your advances."
+        char.player "{think}She's not moving away... I take it she's fine with this. I'll go for it!"
+        "Noticing her acceptance, you slowly move your face closer to her and gives her a passionate kiss."
+        show furina_c1_kiss with dissolve
+        char.furina "Mmh..."
+        char.furina "{think}I've never done this before... I hope I'm doing it right..."
+        "Furina closes her eyes and accepts your advances letting out a soft voice."
+        "You slowly begin to open your mouth to let your tongue touch her lips, noticing this. She does the same."
+        char.furina "Ngh... Mmmgh"
+        char.player "{think}Her small mouth... is locked onto me..."
+        char.furina "{think}His tongue is... twisting around mine... it feels... so good."
+        "The sound of you two kissing quickly fills up the quiet room."
+        "You grab Furina by the waist, trying to hold onto her. Almost instantly she copies your movements."
+        "She stretches her arms around and places them firmly on your back, holding you tightly."
+        scene furina_c1_afterkiss with dissolve
+        char.furina "{think}My mind is going haywire..."
+        char.furina "Fuah... [char.player]..."
+        "Shortly after, you move your lips away from her. You notice that Furina is looking at you with nervousness."
+        char.player "{think}I can see some saliva on her tongue... That's so hot."
+        char.player "C-can I ask you for something...?"
+        scene furina_c1_home8 with dissolve
+        char.furina "Wh-what is it...?"
+        char.player "On the train... You were... pushing your chest at me on purpose, right?"
+        char.furina "Umm... uh... I'm... sorry. I-It's just that it's the first time..."
+        scene furina_c1_home9 with dissolve
+        char.furina "That someone looked at me like that..."
+        char.player "No... it didn't bother me. If I were to tell you... that I'd like to touch and see them more..."
+        char.player "What would you do?"
+        "Being this close to Furina, you could hear her heartbeat race even louder than before."
+        "Without saying a word, she begins slowly taking off her top, dropping it down on the floor."
+        scene furina_c1_home10_a with dissolve
+        pause
+        scene furina_c1_home10_b with dissolve
+        pause
+        scene furina_c1_home10_c with dissolve
+        pause
+        scene furina_c1_home10_d with dissolve
+        char.player "{think}Fuck, I didn't even have to ask her to do it..."
+        char.furina "I-is th-this... fine?"
+        char.player "You're beautiful, Furina. If it's not too much... can you also..."
+        "You point towards her chest, hinting at what you want"
+        char.furina "O-oh..."
+        scene furina_c1_home10_e with dissolve
+        "Without any hesitation, Furina bends forward, moving both her hands behind her to take off her bra."
+        char.player "{think}She's so obedient all of the sudden."
+        scene furina_c1_braless with dissolve
+        pause 0.2
+        scene furina_c1_home10_f
+        char.player "*Gulps* They're... simply amazing. They're perfect."
+        char.furina "You think so...?"
+        char.player "Yes... I can't stop staring at them."
+        scene furina_c1_home10_g with dissolve
+        "Not knowing how to react, she looks away in embarassment."
+        char.player "Let's... move to the bed, shall we?"
+        scene furina_c1_home11 with dissolve
+        char.furina "E-erm... o-okay..."
+
+        scene black with fade
+        "You guide Furina towards your bed and mounts on top of her."
+        scene furina_c1_b1 with dissolve
+        char.furina "[first_two]-[char.player]..."
+        "She once again looks at you nervously, not knowing what to expect."
+        char.player "Don't worry, I'll take care of you."
+        "Furina arches back, her whole body relaxes as she hears the words coming out of youe mouth."
+        scene furina_c1_b2 with dissolve
+        "You then place your hand on her chest. Gently, to not surprise her"
+        char.furina "Ah! Ahh, nnn..."
+        "I cup my palm on top of her breasts and softly grab them."
+        char.player "Whoa... your boobs are as soft as they look."
+        char.furina "Mm... Doesn't men like... bigger ones?"
+        char.player "Yours is perfect, I'm just in awe."
+        char.furina "Hehehe... go ahead. Touch me as much as you want, okay? Nnn..."
+        scene furina_c1_b3 with dissolve
+        pause
+        char.player "{think}I can feel the heat of her breasts across my entire hand."
+        "Her breast softly jiggles and changes shape from your touch."
+        char.furina "Aagh... The way you're touching me is... really naughty."
+        char.player "{think}They're softer than I ever imagined."
+        char.furina "Mmghh..."
+        scene furina_c1_b4 with dissolve
+        "Getting lost in the softness of Furina's breasts, you being grabbing and playing with them more forcefully."
+        char.furina "W-wait... not, not so ahhnn... hard..."
+        char.player "Your nipples are getting hard..."
+        char.furina "Ahh... N-No... Nn! Don't say that... it's embarassing..."
+        "You continue massaging her breasts as you please."
+        char.player "{think}I can't seem to stop..."
+        char.furina "Nghh... you're t-touching them too much..."
+        char.furina "I-I said-"
+        scene furina_c1_b5 with dissolve
+        "Having enough of your antics, she lifts up her arm and pushes you back"
+        char.furina "That's too much!"
+        char.player "S-sorry... I got too absorbed in it."
+        char.furina "Hmph. You don't sa-"
+        scene furina_c1_b6 with dissolve
+        "Noticing the bulge in your pants, she loses her words as her eyse widen."
+        char.furina "T-t-that's..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
-
-
-
-
-
-
-                
 
     else:
         scene furina_chapter1_end9 with dissolve
@@ -643,7 +798,7 @@ label furina_chapter1:
         "She gives a small smile, a faint blush on her cheeks, and you walk together the rest of the way to the bus station."
         "After a brief goodbye, she boards her bus, leaving you with a warm, lingering feeling from the morning spent together."
         scene black with fade
-        dev "Hmm... maybe you went wrong somewhere? How about you try other options. You might get to see something nice."
+        dev "Hmm... maybe you went wrong somewhere? How about you try other dialogue options."
         jump codex_charSelection
     
 
@@ -651,26 +806,6 @@ label furina_chapter1:
 #===========================================================================================================================
 # Demo content tease
 #===========================================================================================================================
-
-label furina_demoContent:
-
-    scene furina_demo loop with fade
-    char.player "A-are you sure you're ready for this, Furina...?"
-    char.player "It's not too late to back out you know"
-    char.furina "W-who do you think I-I am... I'm fine... I want this."
-    char.furina "{sc=3}You can p-put it in..."
-    "Furina's voice wavered, trembling slightly as she looked down towards your erected cock."
-    "She fidgeted, biting her lips, and whispered"
-    char.furina "{sc=3} s-slowly...okay...?"
-    char.player "Alright, Furina... here I go."
-    jump end_demo
-    $ renpy.run(ShowMenu("save"))
-    return
-
-
-
-
-
 
 
 

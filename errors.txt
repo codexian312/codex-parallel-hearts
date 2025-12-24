@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/location/furina_story.rpy", line 580: expected statement.
-    else:
-        ^
+File "game/settings/screens.rpy", line 1179: 'action' is not a keyword argument or valid child of the screen statement.
+    action yes_action
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Dec 23 06:27:44 2025
+Wed Dec 24 05:01:02 2025

@@ -14,6 +14,15 @@ init python:
     renpy.music.register_channel("Effects_three", mixer="sfx")
     renpy.music.register_channel("Voice", mixer="voice")
 
+    def stop_allsound():
+        channels = [
+            "Ambience_one", "Ambience_two", 
+            "BGM_one", "BGM_two", 
+            "Effects_one", "Effects_two", "Effects_three",
+            "Voice"
+        ]
+        for ch in channels:
+            renpy.music.stop(channel=ch, fadeout=2)
 
 
 
@@ -27,6 +36,10 @@ define char.randomOne = Character("???", color="#858aca")
 define you = Character("You")
 define npc.staff = Character("Staff")
 define npc.boss = Character("Boss")
+
+
+$ first_two = char.player.name[:2]
+
 
 default persistent.player_name = ""
 define char.furina = Character("Furina", color="#9bd6e0")
