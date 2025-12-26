@@ -19,13 +19,13 @@ define card_positions = [(140, 190), (734, 190), (1328, 190)]
 define route_cards = {
     1: [
         {"image":"UI/furina_card.png", "hover":"UI/furina_cardSelect.png", "jump":"furina_chapterSelect"},
-        # {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"wip_message"},
-        # {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"WIP"}
+        {"image":"UI/nier_card.png", "hover":"UI/nier_cardSelect.png", "jump":"nier_chapterSelect"},
+        {"image":"UI/tatsumaki_card.png", "hover":"UI/tatsumaki_cardSelect.png", "jump":"tatsumaki_chapterSelect"},
     ],
 
     2: [
-        # {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"WIP"},
-        # {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"WIP"},
+        {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"wip_message"},
+        {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"wip_message"},
         # {"image":"UI/no_card.png", "hover":"UI/no_card.png", "jump":"WIP"}
     ]
     # Add pages DON'T FORGET TO INCREASE
@@ -125,7 +125,7 @@ label codex_start:
 
         jump codex_charSelection
 
-
+    Codex "Logging in..."
     Codex "Welcome back player [char.player] to [Codexp]. Please enjoy your story."
     jump codex_charSelection
     
@@ -139,3 +139,7 @@ label codex_charSelection:
     show screen route_cards_screen
     $ ui.interact()
     return
+
+label wip_message:
+    "Not yet implemented"
+    jump codex_charSelection

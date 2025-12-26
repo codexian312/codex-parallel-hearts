@@ -16,6 +16,22 @@ init python:
 
     config.custom_text_tags["think"] = think_tag
 
+
+    #===========================================================================================================================
+    # Think Big Style
+    #===========================================================================================================================
+    style.think_big_style = Style(style.think_style)
+    style.think_big_style.size = 40
+
+    def think_big_tag(tag, argument, contents):
+        return (
+            [(renpy.TEXT_TAG, "=think_big_style")]
+            + contents
+            + [(renpy.TEXT_TAG, "/=think_big_style")]
+        )
+
+    config.custom_text_tags["think_big"] = think_big_tag
+
     #===========================================================================================================================
     # Bold + Italics Style
     #===========================================================================================================================

@@ -4,6 +4,8 @@
 default furina_lovepoints = 0
 default furina_c1_order = 0
 default furina_chapter1_done = False
+default furina_chapter1_doneMessage = ""
+
 # {color=#d33d3d}[char.player]{/color}
 
 #===========================================================================================================================
@@ -14,13 +16,19 @@ image furina_c1_kiss = Movie(play="scenes/furina/furina_c1_kiss.webm")
 image furina_c1_braless = Movie(play="scenes/furina/furina_c1_braless.webm", loop=False)
 image furina_c1_b3 = Movie(play="scenes/furina/furina_c1_b3.webm", loop=True)
 image furina_c1_b4 = Movie(play="scenes/furina/furina_c1_b4.webm", loop=True)
+image furina_c1_b10 = Movie(play="scenes/furina/furina_c1_b5.webm")
+image furina_c1_b12 = Movie(play="scenes/furina/furina_c1_b6.webm", loop=True)
+image furina_c1_b15 = Movie(play="scenes/furina/furina_c1_b7.webm", loop=True)
+image furina_c1_b16 = Movie(play="scenes/furina/furina_c1_b8.webm")
+image furina_c1_b18 = Movie(play="scenes/furina/furina_c1_b9.webm", loop=True)
+image furina_c1_b24 = Movie(play="scenes/furina/furina_c1_b10.webm")
+
 
 
 label furina_chapterSelect:
     $ clear_screen()
     menu:
-        "Select Chapter"
-        "Chapter 1 - Cafe Date":
+        "Chapter 1 - Cafe Date[ ' - Completed' if furina_chapter1_done else '' ]":
             play Effects_one "audio/effects/game_start.mp3" noloop volume 2
             jump furina_chapter1
         "Chapter 2 - WIP" if furina_chapter1_done == True:
@@ -37,7 +45,7 @@ label furina_chapter1:
     play BGM_one "audio/bgm/cafe_music1.mp3" loop
 
     scene furina_chapter1_1 with fade
-    char.player "{think}Furina had mentioned that this cafe's cakes were supposed to be exceptional.{/think}"
+    char.player "{think}Furina had mentioned that this cafe's cakes were supposed to be exceptional."
     char.player "{think}That alone was enough to convince her to drag me along to try them together.{/think}"
     "Unfortunately, you ended up arriving a little later than planned."
     "From a distance, it was easy to spot her. Arms cross, stiffed posture and her legs tapping impatiently against the ground"
@@ -769,23 +777,157 @@ label furina_chapter1:
         char.furina "Hmph. You don't sa-"
         scene furina_c1_b6 with dissolve
         "Noticing the bulge in your pants, she loses her words as her eyse widen."
-        char.furina "T-t-that's..."
+        "Before you could say anything, she crawls closer and begins pulling down your pants."
+        scene furina_c1_b7 with dissolve
+        char.furina "I... I want to be the one to touch you this time..."
+        char.player "Are you sure...?"
+        char.furina "D-don't look down on me... I can do this...!"
+        char.player "Okay."
+        char.furina "You don't mind...?"
+        char.player "Not at all. I want you to touch me."
+        "With her determination settled, she reaches out to grab your cock"
+        scene furina_c1_b8 with dissolve
+        char.furina "So t-this is what it feels like..."
+        char.player "{think}It's her first time getting a real eyeful and feel but she just grabbed it like it's nothing..."
+        char.player "Don't push yourself too hard, alright?"
+        char.furina "N-no... I'm fine. Sorry if I'm not very good at this... it's my first time..."
+        char.player "Don't worry about it too much, do what you feel is right."
+        scene furina_c1_b9 with dissolve
+        "With that disclaimer, she firmly grabs my cock once again and extends her wet tongue. "
+        char.furina "Mmh...!"
+        char.player "{think_big}She's licking it?!"
+        char.player "{think_big}No hesitation at all?!"
+        "The moment her tongue touches your cock, your thighs quake a little."
+        "You feel a jolt shoots down into the depts of your base."
+        char.furina "Mmmfh... *licks*"
+        "She presses her tongue to the head of your cock, licking up and down as much as she can."
+        char.player "Fuck... Furina..."
+        char.player "{think}Getting head feels great..."
+        char.player "{think}Especially when I never expected it, who would've thought she just goes straight to using her mouth..."
+        char.furina "Mm... dow if it, [char.player]?"
+        char.player "W-what?"
+        char.furina "Is thib good? A-Am I yuing it wight?"
+        char.player "Oh, uh... yeah it feels amazing. But..."
+        char. furina "But what?"
+        char.player "I want you to... put it in your mouth"
+        char.furina "O-Okay... I've never done this before so... I don't know if I can do it well..."
+        char.furina "Okay... H-here I go..."
+        show furina_c1_b10 with dissolve
+        pause 4
+        scene furina_c1_b12 with dissolve
+        "She spreads her little mouth as wide as it will go."
+        "Then she leans forward and gently takes my cock into her mouth."
+        char.furina "Ffhg..."
+        char.player "Fuck... Furina..."
+        "You moan as you feel the wetness against the top of your cock."
+        char.player "Yeah, that feels amazing..."
+        char.furina "Nnn... nghh... it's sho hig..."
+        char.player "{think}I can feel her hot mouth engulfing my cock."
+        "Furina takes your cock even deeper, but the moment she reaches a certain point..."
+        scene furina_c1_b11 with dissolve
+        char.furina "Mmfh-?!"
+        "Taking in more than she could, Furina lets out a muffled yelp and pulls her mouth away as her gag reflex triggers."
+        scene furina_c1_b13 with dissolve
+        char.furina "*Cough, cough*"
+        char.player "Hey, you okay?!"
+        char.furina "Y-yeah... *cough* I'm f-fine..."
+        "You notice her eyes are a little watery."
+        char.player "You don't have to go overboard, you know. It still feels really food either way."
+        scene furina_c1_b15 with dissolve
+        char.furina "I wanted... to make you feel better..."
+        "She pouts slightly at your remark"
+        char.player "You {bi}are{/bi} good at this. It feels amazing!"
+        char.player "It's your first time too, we don't have to rush this..."
+        scene furina_c1_b14 with dissolve
+        char.furina "{bi}No!{/bi} I'll do better this time..."
+        char.furina "Just you watch me..."
+        "With that last remark, her eyes darts back to your cock with a lingering mischevious smile."
+        char.player "You're such a stubborn brat! {think}I can't believe she's so eager for this."
+        char.furina "*Giggles* Who are you calling a brat! I'm just..."
+        "Not finishing her sentence, she takes the slowly takes the tip into her mouth."
+        scene furina_c1_b16 with dissolve
+        pause 3
+        scene furina_c1_b17
+        "However this time, she continues until she gets about halfway down before she comes to a stop."
+        char.player "F-fuuuuck!"
+        "Furina tries her best not to gag or let go of your cock."
+        "Her warm little mouth tightly grips agaisnt it as her tongue licks the underside of your cock uncomfortably inside."
+        char.furina "Nnn... Gghhh.{think} It's so big... I can barely breath like this... but... I can't help making him feel good. I want to!"
+        char.player "{think}She doesn't know how to use her tongue properly yet. Nevertheless this feels fucking terrific..."
+        char.furina "{think}I think I can... go faster now...?"
+        show furina_c1_b15 with dissolve
+        char.player "Jesus... fuck..! F-Furina..."
+        "With her increasing her speed, the pleasure gets stronger and you feel yourself twitching in her mouth."
+        char.furina "Mmfgh... ahghh... oouf..."
+        "Waves of pleasure flood into you one after another as she continues to bop her head up and down."
+        char.player "Furina, that's so intense...!"
+        char.player "If you k-keep this up... I'm gonna cum!"
+        char.furina "Mm... f-fo aheadd..."
+        scene furina_c1_b18 with dissolve
+        "Almost begging for your cum, she sucks you more forcefully."
+        char.player "Hnng! Shit... aah!"
+        char.furina "*slurp* guk guk... mmfg... mmfgh."
+        char.player "Ffucckk, I'm gonna blow!"
+        "You feel an aching sensation building up from the base of your cock."
+        char.player "Furina, I'm cumming!"
+        scene furina_c1_b19 with dissolve
+        play Effects_one "audio/effects/creampie_a.wav" noloop
+        "An explosion of cum floods her mouth."
+        char.furina "Gfughh?! {think}S-so much... It's... filling my mouth"
+        "She reflexively leans back slightly, but doesn't pull your cock out. Her cheeks puff up as you shoot more cum towards her."
+        char.player "T-take it all...!"
+        "After a few moments, her expression softens as she settles"
+        "It took her some time to get used to the sensation flowing within her mouth, however that was short lived as..."
+        scene furina_c1_b20 with dissolve
+        play Effects_one "audio/effects/creampie_d.wav" noloop
+        "...another wave of explosion hits."
+        char.player "Ssss-shiiiiiit... {size=40}FUCK!"
+        char.furina "{bi}MMFH?!"
+        "The second load you shot fills her mouth more than earlier, expanding her cheeks further."
+        "With no where to escape, some of your cum flows down into Furina's throat."
+        char.player "F-Furina... that was am-?"
+        char.player "{think}I'm twitching like crazy... but... why does her mouth feel so tight all of the sudden...?"
+        char.player "{think}Like tha-... she's... no way... {bi}still sucking...?!"
+        scene furina_c1_b21 with dissolve
+        char.furina "{think}I-it's too much... I'm... going blank..."
+        play Effects_one "audio/effects/swallow.mp3" noloop volume 10
+        "Furina, half-passed-out and barely conscious, starts swallowing your cum."
+        char.player "F-Furina?! {think}She's swallowing my cum..."
+        "She swallows over... and over, drinking it a little at a time."
+        play Effects_one "audio/effects/swallow.mp3" noloop volume 10
+        scene furina_c1_b22 with dissolve
+        "Her cheeks get less and less puffy as she gulps your cum down. The mess flowing down her mouth onto your cock flows down slowly."
+        scene furina_c1_b23 with dissolve
+        play Effects_one "audio/effects/swallow.mp3" noloop volume 10
+        "Then finally, your ejaculation ends."
+        "She swallows the last mouthful of cum, then gently pulls away. Exhuastion clear on her face."
+        scene furina_c1_b24 with dissolve
+        pause 2
+        scene furina_c1_b25 
+        "As she pulls away, her tongue rub against the bast of your cock up to the tip making you tremble slightly."
+        char.furina "...?"
+        char.player "{think}F-fuck... I'm so sensitive..."
+        "One strand of cum drips from her tongue as she looks up at you blankfully."
+        char.furina "D-did you... feel good...?"
+        char.player "Absolutely... it was the best thing ever."
+        char.furina "Did... did I do a good job...?"
+        char.player "Of course you did, you were amazing! You were execellent despite this being your first."
+        char.furina "Heheh... {size=20}I'm g-glad {size=10}to h-"
+        play Effects_one "audio/effects/body_fall.mp3" noloop volume 3
+        scene furina_c1_b26 with dissolve
+        "Furina collapses onto your thighs as she runs out of energy to speak. Your cock flops to the side following her, resting."
+        char.player "{think}She must've been really tired. She pushed herself so much earlier... I'll clean up and tuck her in properly."
+        scene black with fade
+        "After resting for a short while, you clean up any mess that was made between the two of you"
+        scene furina_c1_final with dissolve
+        "You then finally adjust Furina so she could sleep properly and lay down beside her..."
+        "After a long day, both both rest in each other's embrases for the night."
+        $ furina_chapter1_done = True
+        scene black with fade
+        dev "You have finished Chapter 1 of Furina's story! I hope you enjoyed this, her story will continue in another update!"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        jump codex_charSelection
         
-
     else:
         scene furina_chapter1_end9 with dissolve
         char.furina "I think I'll just head home... it's been a long morning, and I'm feeling a little tired. Thanks for coming along, though!"  
@@ -801,33 +943,6 @@ label furina_chapter1:
         dev "Hmm... maybe you went wrong somewhere? How about you try other dialogue options."
         jump codex_charSelection
     
-
-
-#===========================================================================================================================
-# Demo content tease
-#===========================================================================================================================
-
-
-
-    scene furina_sex1_1 with fade 
-    pause
-    scene furina_sex1_afterkiss with dissolve
-    pause
-    scene furina_sex1_2 with dissolve
-    pause 3.5
-    scene furina_sex1_afterstrip
-    pause
-    scene furina_sex1_bra with dissolve
-    pause
-    scene furina_sex1_3 with dissolve
-    pause 1
-    show furina_sex_braless with dissolve
-    pause
-    scene furina_sex1_4 with fade
-    pause
-    "test"
-
-
 
 
 

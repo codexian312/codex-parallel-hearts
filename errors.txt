@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/settings/screens.rpy", line 1179: 'action' is not a keyword argument or valid child of the screen statement.
-    action yes_action
-          ^
+The label furina_chapterSelect is defined twice, at File "game/location/2b_story.rpy", line 18:
+label furina_chapterSelect:
+and File "game/location/furina_story.rpy", line 28:
+label furina_chapterSelect:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Dec 24 05:01:02 2025
+Wed Dec 24 22:57:48 2025

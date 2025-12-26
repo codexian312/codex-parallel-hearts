@@ -277,6 +277,11 @@ define gui.slot_spacing = 15
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
 
+style main_menu_title:
+    color "#f36e69"        # title color (warm gold)
+    outlines [(2, "#00000080", 0, 0)]  # optional soft shadow
+style main_menu_version:
+    color "#f36e69"        # version text color (light gray)
 
 ## Frames ######################################################################
 ##

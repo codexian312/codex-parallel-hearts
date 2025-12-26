@@ -358,8 +358,7 @@ screen main_menu():
     frame:
         style "main_menu_frame"
 
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
+    ## The use statement includes another screen inside this one.
     use navigation
 
     if gui.show_name:
@@ -372,6 +371,7 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
+
 
 
 style main_menu_frame is empty
@@ -1171,40 +1171,12 @@ screen confirm(message, yes_action, no_action):
     # --------------------------------------------------
     if message == gui.MAIN_MENU:
         timer 0.001 action yes_action
+    
+    else:
+        timer 0.001 action yes_action
 
 
         key "game_menu" action no_action
-
-    # --------------------------------------------------
-    # DEFAULT CONFIRM (ALL OTHER CASES)
-    # --------------------------------------------------
-    else:
-
-        ## Everything below here is basically the Ren'Py default
-        frame:
-            style_prefix "confirm"
-
-            xfill True
-            xmargin 50
-            ypadding 25
-            yalign .25
-
-            vbox:
-                xfill True
-                spacing 25
-
-                ## Message text (delete save, overwrite, load, etc.)
-                text _(message):
-                    textalign 0.5
-                    xalign 0.5
-
-                ## Yes / No buttons (default behavior)
-                hbox:
-                    spacing 100
-                    xalign .5
-
-                    textbutton _("Yes") action yes_action
-                    textbutton _("No") action no_action
 
 
 
