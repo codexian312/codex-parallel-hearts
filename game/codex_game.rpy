@@ -6,19 +6,17 @@ default initial_startup = False
 #===========================================================================================================================
 # Game screen scripts
 #===========================================================================================================================
-
-# Page Tracker
-
 default route_page = 1
 define max_pages = 2  # DON'T FORGET TO INCREASE
-
-# Fixed card positions
 define card_positions = [(140, 190), (734, 190), (1328, 190)]
 
 # Cards per page dictionary
 define route_cards = {
     1: [
-        {"image":"UI/furina_card.png", "hover":"UI/furina_cardSelect.png", "jump":"furina_chapterSelect"},
+        {"image":"UI/furina_card.png", 
+        "hover":"[furina_cardHover]", 
+        "jump":"furina_chapterSelect"},
+
         {"image":"UI/nier_card.png", "hover":"UI/nier_cardSelect.png", "jump":"nier_chapterSelect"},
         {"image":"UI/tatsumaki_card.png", "hover":"UI/tatsumaki_cardSelect.png", "jump":"tatsumaki_chapterSelect"},
     ],

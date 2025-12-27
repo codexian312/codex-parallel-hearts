@@ -5,6 +5,7 @@ default furina_lovepoints = 0
 default furina_c1_order = 0
 default furina_chapter1_done = False
 default furina_chapter1_doneMessage = ""
+default furina_cardHover = "UI/furina_cardSelect.png"
 
 # {color=#d33d3d}[char.player]{/color}
 
@@ -18,7 +19,7 @@ image furina_c1_b3 = Movie(play="scenes/furina/furina_c1_b3.webm", loop=True)
 image furina_c1_b4 = Movie(play="scenes/furina/furina_c1_b4.webm", loop=True)
 image furina_c1_b10 = Movie(play="scenes/furina/furina_c1_b5.webm")
 image furina_c1_b12 = Movie(play="scenes/furina/furina_c1_b6.webm", loop=True)
-image furina_c1_b15 = Movie(play="scenes/furina/furina_c1_b7.webm", loop=True)
+image furina_c1_b15_1 = Movie(play="scenes/furina/furina_c1_b7.webm", loop=True)
 image furina_c1_b16 = Movie(play="scenes/furina/furina_c1_b8.webm")
 image furina_c1_b18 = Movie(play="scenes/furina/furina_c1_b9.webm", loop=True)
 image furina_c1_b24 = Movie(play="scenes/furina/furina_c1_b10.webm")
@@ -108,7 +109,7 @@ label furina_chapter1:
             char.furina "Not a big de- Hmph! Fine! I suppose I can forgive you this once."
             char.player "Alright, alright... let's head inside before we both get more worked up. Everyone is looking at us"
             scene furina_chapter1_3_4 with dissolve
-            char.furina "{size=12}He didn't have to be so mean about it... I was super excited to see him...{/size}"
+            char.furina "{size=18}He didn't have to be so mean about it... I was super excited to see him...{/size}"
             char.player "What did you say?"
             scene furina_chapter1_3_3 with dissolve
             char.furina "{size=40}I said you better not make me wait like that again!{/size}"
@@ -855,7 +856,7 @@ label furina_chapter1:
         char.furina "Nnn... Gghhh.{think} It's so big... I can barely breath like this... but... I can't help making him feel good. I want to!"
         char.player "{think}She doesn't know how to use her tongue properly yet. Nevertheless this feels fucking terrific..."
         char.furina "{think}I think I can... go faster now...?"
-        show furina_c1_b15 with dissolve
+        show furina_c1_b15_1 with dissolve
         char.player "Jesus... fuck..! F-Furina..."
         "With her increasing her speed, the pleasure gets stronger and you feel yourself twitching in her mouth."
         char.furina "Mmfgh... ahghh... oouf..."
@@ -923,6 +924,7 @@ label furina_chapter1:
         "You then finally adjust Furina so she could sleep properly and lay down beside her..."
         "After a long day, both both rest in each other's embrases for the night."
         $ furina_chapter1_done = True
+        $ furina_cardHover = "UI/no_card.png"
         scene black with fade
         dev "You have finished Chapter 1 of Furina's story! I hope you enjoyed this, her story will continue in another update!"
 

@@ -36,6 +36,7 @@ define char.randomOne = Character("???", color="#858aca")
 define you = Character("You")
 define npc.staff = Character("Staff")
 define npc.boss = Character("Boss")
+define npc.drone = Character("Drone")
 
 
 $ first_two = char.player.name[:2]
@@ -44,6 +45,7 @@ $ first_two = char.player.name[:2]
 default persistent.player_name = ""
 define char.furina = Character("Furina", color="#9bd6e0")
 define char.bella = Character("Isabella", color="#eeec83")
+define char.nier = Character("2B", color="#444444")
 
 
 
@@ -52,7 +54,7 @@ define char.bella = Character("Isabella", color="#eeec83")
 #===========================================================================================================================
 label start:
     dev "Hey! Thanks for picking up my game to try it out. I'm [dev] and this is my first visual novel, or game rather!"
-    dev "Let me tell you a little bit about the game. Codex: Parallel Hearts is a story where you can meet and interact with characters inspired by some of your favourite characters!"
+    dev "Let me tell you a little bit about the game. [Codexp] is a story where you can meet and interact with characters inspired by some of your favourite characters!"
     dev "You will experience these stories firsthand, going on dates and forming connections with your chosen character from the [Codex]"
     dev "This project is just the beginning! I hope you enjoy exploring the Codex and these reimagined worlds as much as I enjoyed creating them."
     dev "Your choices, your stories, your hearts, welcome to the [Codex]"

@@ -1169,7 +1169,7 @@ screen confirm(message, yes_action, no_action):
     # --------------------------------------------------
     # Back to main menu UI
     # --------------------------------------------------
-    if message == gui.MAIN_MENU:
+    elif message == gui.MAIN_MENU:
         timer 0.001 action yes_action
     
     else:

@@ -31,7 +31,6 @@ label tatsumaki_chapterSelect:
 #===========================================================================================================================
 label tatsumaki_chapter1:
     $ clear_screen()
-    $ stop_allsound()
     "Currently WIP"
     jump codex_charSelection
 
