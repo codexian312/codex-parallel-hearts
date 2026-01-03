@@ -7,7 +7,7 @@ init python:
     # Think Style
     #===========================================================================================================================
     style.think_style = Style(style.default)
-    style.think_style.color = "#ffffff80"  
+    style.think_style.color = "#cdecf3a7"  
     style.think_style.bold = False
     style.think_style.italic = True 
 

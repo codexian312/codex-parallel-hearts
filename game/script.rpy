@@ -9,9 +9,9 @@ init python:
     renpy.music.register_channel("Ambience_two", mixer="music")
     renpy.music.register_channel("BGM_one", mixer = "music")
     renpy.music.register_channel("BGM_two", mixer = "music")
-    renpy.music.register_channel("Effects_one", mixer="sfx")
-    renpy.music.register_channel("Effects_two", mixer="sfx")
-    renpy.music.register_channel("Effects_three", mixer="sfx")
+    renpy.music.register_channel("Effects_one", mixer="sound")
+    renpy.music.register_channel("Effects_two", mixer="sound")
+    renpy.music.register_channel("Effects_three", mixer="sound")
     renpy.music.register_channel("Voice", mixer="voice")
 
     def stop_allsound():
@@ -37,6 +37,8 @@ define you = Character("You")
 define npc.staff = Character("Staff")
 define npc.boss = Character("Boss")
 define npc.drone = Character("Drone")
+define npc.command = Character("Command")
+define npc.terminal = Character("Terminal")
 
 
 $ first_two = char.player.name[:2]
@@ -45,7 +47,8 @@ $ first_two = char.player.name[:2]
 default persistent.player_name = ""
 define char.furina = Character("Furina", color="#9bd6e0")
 define char.bella = Character("Isabella", color="#eeec83")
-define char.nier = Character("2B", color="#444444")
+define char.nier = Character("2B", color="#1c1c1c")
+define nier2bmenu = Character("2B", color="#1c1c1c")
 
 
 

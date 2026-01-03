@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/location/2b_story.rpy", line 265: choice menuitem expects a non-empty block.
-    "Which direction do you go?":
-                                 ^
+File "game/location/2b_story.rpy", line 1003: expecting name after dot.
+    char.
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Dec 27 00:43:57 2025
+Sat Jan  3 07:44:51 2026

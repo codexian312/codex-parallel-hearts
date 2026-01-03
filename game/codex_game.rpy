@@ -17,7 +17,11 @@ define route_cards = {
         "hover":"[furina_cardHover]", 
         "jump":"furina_chapterSelect"},
 
-        {"image":"UI/nier_card.png", "hover":"UI/nier_cardSelect.png", "jump":"nier_chapterSelect"},
+        {"image":"UI/nier_card.png", 
+        "hover":"[nier_cardHover]", 
+        "jump":"nier_chapterSelect"},
+
+
         {"image":"UI/tatsumaki_card.png", "hover":"UI/tatsumaki_cardSelect.png", "jump":"tatsumaki_chapterSelect"},
     ],
 

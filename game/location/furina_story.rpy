@@ -348,8 +348,10 @@ label furina_chapter1:
     "Furina grab holds of the coffee and takes a sip"  
     scene furina_chapter1_10_3 with dissolve
     "Furina grabs the coffee, lifting it carefully to her lips. She takes a small sip, her eyes narrowing as she tastes it." 
+    
     if furina_c1_order == 4:
         scene furina_chapter1_10_yes with dissolve
+        $ furina_c1_order = 0
         char.furina "Hm... Not bad... actually, this is perfect! {bi}Just the way I like it!{/bi}" 
         "She sets the cup down with a satisfied smirk, happily sipping away."
         char.player "{think}Looks like I got the order just right... well done, me.{/think}"
@@ -361,6 +363,7 @@ label furina_chapter1:
         scene furina_chapter1_10_no with dissolve
         char.furina "{bi}[char.player]?!{/bi} This isn't what I asked for!"
         $ furina_lovepoints -= 5
+        $ furina_c1_order = 0
         "She sets the cup down with a frown, crossing her arms and glaring at you, clearly displeased."
         char.player "{think}Oops... looks like I messed up the order.{/think}"
         char.furina "Hmph! I can't believe you got it wrong... You better pay more attention next time!"
@@ -601,7 +604,7 @@ label furina_chapter1:
         "Together, you stepped onto the platform, the low rumble of the approaching train growing louder. People moved around you both, but you and Furina stayed close."
         "Finally, the train arrived, its doors sliding open with a loud clank."
         scene furina_c1_train1 with dissolve
-        "Hand in hand, you both stepped inside the train. The car was packed with passengers but you managed to find a small corver with empty seats to yourselves"
+        "Hand in hand, you both stepped inside the train. The car was packed with passengers but you managed to find a small corner with empty seats to yourselves"
         "Once seated, Furina did something completely unexpected"
         scene furina_c1_train2 with dissolve
         "She linked her arm with yours, gripping your hand tightly. She rested her head gently on your shoulder, while her other hand came to rest on top of yours."
@@ -746,7 +749,7 @@ label furina_chapter1:
         char.furina "[first_two]-[char.player]..."
         "She once again looks at you nervously, not knowing what to expect."
         char.player "Don't worry, I'll take care of you."
-        "Furina arches back, her whole body relaxes as she hears the words coming out of youe mouth."
+        "Furina arches back, her whole body relaxes as she hears the words coming out of your mouth."
         scene furina_c1_b2 with dissolve
         "You then place your hand on her chest. Gently, to not surprise her"
         char.furina "Ah! Ahh, nnn..."
@@ -763,7 +766,7 @@ label furina_chapter1:
         char.player "{think}They're softer than I ever imagined."
         char.furina "Mmghh..."
         scene furina_c1_b4 with dissolve
-        "Getting lost in the softness of Furina's breasts, you being grabbing and playing with them more forcefully."
+        "Getting lost in the softness of Furina's breasts, you begin grabbing and playing with them more forcefully."
         char.furina "W-wait... not, not so ahhnn... hard..."
         char.player "Your nipples are getting hard..."
         char.furina "Ahh... N-No... Nn! Don't say that... it's embarassing..."
@@ -777,7 +780,7 @@ label furina_chapter1:
         char.player "S-sorry... I got too absorbed in it."
         char.furina "Hmph. You don't sa-"
         scene furina_c1_b6 with dissolve
-        "Noticing the bulge in your pants, she loses her words as her eyse widen."
+        "Noticing the bulge in your pants, she loses her words as her eyes widen."
         "Before you could say anything, she crawls closer and begins pulling down your pants."
         scene furina_c1_b7 with dissolve
         char.furina "I... I want to be the one to touch you this time..."
@@ -833,7 +836,7 @@ label furina_chapter1:
         char.player "Hey, you okay?!"
         char.furina "Y-yeah... *cough* I'm f-fine..."
         "You notice her eyes are a little watery."
-        char.player "You don't have to go overboard, you know. It still feels really food either way."
+        char.player "You don't have to go overboard, you know. It still feels really good either way."
         scene furina_c1_b15 with dissolve
         char.furina "I wanted... to make you feel better..."
         "She pouts slightly at your remark"
@@ -905,14 +908,14 @@ label furina_chapter1:
         scene furina_c1_b24 with dissolve
         pause 2
         scene furina_c1_b25 
-        "As she pulls away, her tongue rub against the bast of your cock up to the tip making you tremble slightly."
+        "As she pulls away, her tongue rub against the base of your cock up to the tip making you tremble slightly."
         char.furina "...?"
         char.player "{think}F-fuck... I'm so sensitive..."
         "One strand of cum drips from her tongue as she looks up at you blankfully."
         char.furina "D-did you... feel good...?"
         char.player "Absolutely... it was the best thing ever."
         char.furina "Did... did I do a good job...?"
-        char.player "Of course you did, you were amazing! You were execellent despite this being your first."
+        char.player "Of course you did, you were amazing! You were excellent despite this being your first."
         char.furina "Heheh... {size=20}I'm g-glad {size=10}to h-"
         play Effects_one "audio/effects/body_fall.mp3" noloop volume 3
         scene furina_c1_b26 with dissolve
@@ -922,9 +925,9 @@ label furina_chapter1:
         "After resting for a short while, you clean up any mess that was made between the two of you"
         scene furina_c1_final with dissolve
         "You then finally adjust Furina so she could sleep properly and lay down beside her..."
-        "After a long day, both both rest in each other's embrases for the night."
+        "After a long day, you both rest in each other's embrases for the night."
         $ furina_chapter1_done = True
-        $ furina_cardHover = "UI/no_card.png"
+        $ furina_cardHover = "UI/furina_cardSelect2.png"
         scene black with fade
         dev "You have finished Chapter 1 of Furina's story! I hope you enjoyed this, her story will continue in another update!"
 
@@ -943,10 +946,14 @@ label furina_chapter1:
         "After a brief goodbye, she boards her bus, leaving you with a warm, lingering feeling from the morning spent together."
         scene black with fade
         dev "Hmm... maybe you went wrong somewhere? How about you try other dialogue options."
+        $ furina_lovepoints = 0
         jump codex_charSelection
     
 
 
 
-      
-    
+#===========================================================================================================================
+# Start of Chapter 2
+#===========================================================================================================================      
+label furina_chapter2:
+    "WIP" 

@@ -105,6 +105,7 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
+                yoffset 10
                 text who id "who"
 
         text what id "what"
