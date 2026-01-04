@@ -19,7 +19,7 @@ init python:
             "Ambience_one", "Ambience_two", 
             "BGM_one", "BGM_two", 
             "Effects_one", "Effects_two", "Effects_three",
-            "Voice"
+            "Voice", "music"
         ]
         for ch in channels:
             renpy.music.stop(channel=ch, fadeout=2)
@@ -56,6 +56,7 @@ define nier2bmenu = Character("2B", color="#1c1c1c")
 # Start of game / End of game
 #===========================================================================================================================
 label start:
+    $ stop_allsound()
     dev "Hey! Thanks for picking up my game to try it out. I'm [dev] and this is my first visual novel, or game rather!"
     dev "Let me tell you a little bit about the game. [Codexp] is a story where you can meet and interact with characters inspired by some of your favourite characters!"
     dev "You will experience these stories firsthand, going on dates and forming connections with your chosen character from the [Codex]"

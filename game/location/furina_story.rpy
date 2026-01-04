@@ -74,7 +74,7 @@ label furina_chapter1:
             char.player "Yes yes... I'm sorry I was late. It wo-"
             "Before you can continue, she interrupts you sharply."
             scene furina_chapter1_3_2
-            char.furina "But! Next time we meet, you better be on tim— No, make that earlier than me!"
+            char.furina "But! Next time we meet, you better be on tim- No, make that earlier than me!"
             char.player "{think}At least she forgave me quick enough, I'm glad I apologised straightaway...{/think}"
             char.player "Alright, alright... I promise to do that next time."
             char.furina "Good... now, shall we head inside before we waste any more time standing out here?"
@@ -491,7 +491,7 @@ label furina_chapter1:
         scene furina_c1_walk5 with dissolve
         "Furina froze."
         scene furina_c1_walk6 with dissolve
-        char.furina "W-what—!? D-don't you dare!"
+        char.furina "W-what-!? D-don't you dare!"
         char.furina "That's not what I meant! I wasn't talking about that kind of reliable!"
         "She turned toward you sharply, hands clenched at her sides, clearly flustered."
         char.furina "B-besides! I-I'm perfectly capable! You don't need to call anyone!"
@@ -500,7 +500,7 @@ label furina_chapter1:
         char.player "If you really wanted someone else, you wouldn't have dragged me out five times already."
         scene furina_c1_walk8 with dissolve
         "She opened her mouth to argue, then stopped."
-        char.furina "T-that's...! That's because you're—!"
+        char.furina "T-that's...! That's because you're-!"
         char.furina "Ugh... forget it! You're impossible."
         char.player "{think} She might seem like this, but she cares more than she lets on. Should I say something?"
 

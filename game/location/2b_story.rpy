@@ -6,6 +6,8 @@ default nier_c1_order = 0
 default nier_chapter1_done = False
 default nier_chapter1_doneMessage = ""
 default nier_bonus1_seen = False
+default nier_cardHover = "UI/nier_cardSelect.png"
+
 
 # {color=#d33d3d}[char.player]{/color}
 
@@ -22,7 +24,7 @@ image nier_c1_g11 = Movie(play="scenes/nier/nier_c1_g11.webm", loop=True)
 image nier_c1_g13 = Movie(play="scenes/nier/nier_c1_g13.webm", loop=True)
 image nier_c1_g14 = Movie(play="scenes/nier/nier_c1_g14.webm", loop=True)
 image nier_c1_g15 = Movie(play="scenes/nier/nier_c1_g15.webm", loop=True)
-image nier_c1_g16 = Movie(play="scenes/nier/nier_c1_g16.webm", loop=False)
+image nier_c1_g16 = Movie(play="scenes/nier/nier_c1_g16.webm", loop=True)
 
 
 
@@ -62,7 +64,7 @@ label nier_chapter1:
     scene nier_c1_a1 with dissolve
     char.nier "Connection qua... ty is ...raded, Operat..."
     char.player "{think} Is something interfering with our communications?"
-    char.player "Your signal is breaking up. Say again."
+    char.player "Your signal is breaking up. Say it again."
     play Effects_one "audio/effects/radio_static.mp3" noloop volume 2
     char.nier "Connec... quality is degraded, ...tor."
     char.nier "Unit 2B operational. En... rema... hostiles."
@@ -96,16 +98,15 @@ label nier_chapter1:
     char.nier "Internal temperature regulation is lagging."
     char.nier "Motor response feedback is distorted."
     char.player "{think} Prolonged engagement. She has been fighting for too long, her system's strain accumulating."
-    char.player "How is your combat effectiveness holding?"
     char.player "Understood."
     char.player "{think} She says she is fine. That does not mean she should stay."
     char.player "{think} Pushing further will only make this worse."
     char.player "I am adjusting mission parameters. Await further instructions."
     char.nier "Acknowledged, awaiting further orders."
-    "Silence overtakes the channel as you weight your options."
+    "Silence overtakes the channel as you weigh your options."
     char.player "Disengage from forward hostiles and withdraw to the temporary YoRHa safehouse."
     play Effects_one "audio/effects/radio1.mp3" noloop volume 1.2
-    char.nier "Operator, I assess that continued engagement remains within acceptable—"
+    char.nier "Operator, I assess that continued engagement remains within acceptable-"
     char.player "Negative."
     char.player "Your current condition does not support extended combat."
     char.player "Withdraw."
@@ -127,7 +128,7 @@ label nier_chapter1:
     "The channel has already gone silent, but your gaze lingers on the terminal."
     char.player "{think} Last time, she pushed beyond her limits because the Command ordered it."
     char.player "{think} The mission succeeded, but she barely did."
-    "The line was already disconnected but you still look up towards the terminal and mutters"
+    "The line was already disconnected but you look up towards the terminal and mutter."
     char.player "We are not disposable pawns for YoRHa, 2B."
     char.player "I will make sure you survive. Even if I do not."
     char.player "{think} Command would say she can be restored. As if that makes it the same."
@@ -150,7 +151,7 @@ label nier_chapter1:
     "You slow near the exit as you start to hear mechanical sounds coming from nearby."
     char.player "{think}Recon drones. If they see me first... it's already over."
     "To your left, a rusted ladder runs up the side of a low structured building."
-    "You weight the options quickly."
+    "You weigh the options quickly."
     scene nier_c1_b2_1 with dissolve
     menu:
         "Where do you go?"
@@ -176,19 +177,18 @@ label nier_chapter1:
 
         "Go up the ladder":
             scene nier_c1_b2_2 with dissolve
-            "scene is staring at ladder looking up"
             "You stop at the base of the ladder and tilt your head upward. The metal frame disappears into the shadow above."
             char.player "{think}Recon drones favor ground-level sweeps, I should survey a bit before proceeding in the open."
             "Deciding to gather more information, you grip the ladder and begin to climb."
             scene nier_c1_b2_3 with dissolve
-            "Each rung creaks softly beneath your weight."
+            "Each step creaks softly beneath your weight."
             "You pause once, listening."
             play Effects_one "audio/effects/robot_noise2.mp3" noloop volume 1.5
             char.player "{think}There's definitely a few of them in the area, I should proceed with caution."
             scene nier_c1_b2_4 with dissolve
             "From the rooftop, the street below comes into view."
             "Three... no. Four drone units patrol the area in slow, overlapping paths."
-            "Their sensors sweep rhythimcally through the streets."
+            "Their sensors sweep rhythmically through the streets."
             char.player "{think}Patrol cycle confirmed."
             char.player "{think}Open movement below would result in immediate termination."
             "You lower yourself slightly, keeping your silhouette below the edge of the structure."
@@ -204,17 +204,17 @@ label nier_chapter1:
             char.player "{think}They shouldn't be random..."
             scene nier_c1_b4_2 with dissolve
             "One unit sweeps the street, its sensors beam lingering before rotating away."
-            char.player "{think}That's one of the units that was in fron of the alley entrance."
+            char.player "{think}That's one of the units that was in front of the alley entrance."
             scene nier_c1_b4_3 with dissolve
             "One unit flew pass the entrance and pauses longer than the rest. The other two drone moves towards different part of the town."
             char.player "{think}There's a delay... right after the second unit turns."
             "You keep watching..."
             "The lead drone rotates away and all their positions have resetted to the start of your mapping."
             char.player "{think}There's definitely a window I can fit in for sure. Let's review."
-            char.player "{think}First unit scans the alley directly, if I'm going to move, it hast to be after that scan."
+            char.player "{think}First unit scans the alley directly, if I'm going to move, it has to be after that scan."
             char.player "{think}The second drone does not scan the alley but clears the entrance. That's my exit."
-            char.player "{think}A third drone approaches from the opposite direction. If I go straight, I'll cross it's scan."
-            char.player "{think}That leaves only {b}one{b} direction to go..."
+            char.player "{think}A third drone approaches from the opposite direction. If I go straight, I'll cross its scan."
+            char.player "{think}That leaves only {bi}one{/bi} direction to go..."
             "You commit the sequence to memory."
 
             menu:
@@ -243,7 +243,7 @@ label nier_chapter1:
                     "The patrol cycle resets and another scan sweeps the alley."
                     "Your delay costs you the opening."
                     npc.drone "Irregular signal detected. Classification: hostile. Commencing elimination."
-                    char.player "Shit—!"
+                    char.player "Shit-!"
                     play Effects_one "audio/effects/laser_single.mp3" noloop
                     jump nier_gameover
 
@@ -257,7 +257,7 @@ label nier_chapter1:
                     "Another unit catches you as you step out of the alley."
                     "Your movement is immediately detected."
                     npc.drone "Irregular signal detected. Classification: hostile. Commencing elimination."
-                    char.player "N-no—!"
+                    char.player "N-no-!"
                     play Effects_one "audio/effects/laser_single.mp3" noloop
                     jump nier_gameover
 
@@ -281,7 +281,7 @@ label nier_chapter1:
                 "Turn right":
                     scene nier_c1_b4_5 with dissolve
                     "You turn right immediately."
-                    "A third drone pivots towards you, activating it's sensor mid rotation."
+                    "A third drone pivots towards you, activating its sensor mid rotation."
                     scene nier_c1_b4_6 with dissolve
                     play Effects_one "audio/effects/dodge.mp3" noloop
                     "The scan sweeps the area in front of it."
@@ -298,7 +298,7 @@ label nier_chapter1:
                     "A scan sweeps the area behind you."
                     "You step directly back into its range."
                     npc.drone "Irregular signal detected. Classification: hostile. Commencing elimination."
-                    char.player "—!"
+                    char.player "-!"
                     play Effects_one "audio/effects/laser_single.mp3" noloop
                     jump nier_gameover
 
@@ -309,7 +309,7 @@ label nier_chapter1:
                     "A third drone approaches from the opposite direction."
                     "Its sensor beam sweeps across your path mid-step."
                     npc.drone "Irregular signal detected. Classification: hostile. Commencing elimination."
-                    char.player "Shit—!"
+                    char.player "Shit-!"
                     play Effects_one "audio/effects/laser_single.mp3" noloop
                     jump nier_gameover
 
@@ -339,12 +339,12 @@ label nier_chapter1:
 
 label nier_c1_safehouse:
     scene black with fade
-    "After narrowingly escaping the patrol units, their presence beings to thin."
+    "After narrowingly escaping the patrol units, their presence begins to thin."
     "Only one or two drones remain active along your route to the safehouse."
     "An older memory surfaces as you close in on the entrance."
     scene nier_c1_flashback1 with dissolve
     play Ambience_one "audio/ambience/mystery_ambience.mp3" loop volume 0.8 fadein 1.0
-    "The command room is brightly lit."
+    "{bi}A few hours ago in the command room."
     "Terminals display a ruined sector map."
     play Effects_one "audio/effects/radio1.mp3" noloop volume 1.5
     "A data node blinks near the center."
@@ -390,7 +390,7 @@ label nier_c1_safehouse:
     char.nier "The objective is clear."
     char.player "The objective is, the path to it isn't."
     char.nier "Uncertainty is expected on missions."
-    char.player "That's true, But risk is one thing. Blind risk is another."
+    char.player "That's true, but risk is one thing. Blind risk is another."
     char.nier "Command believes the risk is acceptable."
     char.player "Command isn't the one walking into it."
     char.nier "Neither are you alone."
@@ -530,7 +530,7 @@ label nier_c1_safehouse:
     play Ambience_one "audio/ambience/thinking_ambience.mp3" loop fadein 1.0
     "The safehouse lights activate as you enter. Dust settles slowly, disturbed by your movement."
     "2B steps inside after you, briefly scanning the interior as the door seals shut behind her."
-    "For a moment, neither of you speaks."
+    "For a moment, neither of you speak."
     scene nier_c1_d2 with dissolve
     "You move toward the console while she remains near the entrance."
     "She tries to straighten her posture, but the damage is evident."
@@ -693,7 +693,7 @@ label nier_c1_safehouse:
             char.nier "Understood."
     
     scene nier_c1_d25 with dissolve
-    char.nier "Contiuation, please clarify the requirement."
+    char.nier "Continuation, please clarify the requirement."
     char.player "The affected pathways require direct access."
     char.player "Any barrier will interfere with proper heat transfer."
     scene nier_c1_d26 with dissolve
@@ -724,7 +724,7 @@ label nier_c1_safehouse:
     scene nier_c1_e3 with dissolve
     "Once finished, she looks at you for confirmation."
     "Her body stands in front of you. Nothing but her panties left."
-    char.player "{think}T-Thats... What is this feeling...?"
+    char.player "{think}T-That's... What is this feeling...?"
     "You can't help but stare at her body. Something you've never seen before."
     "A new sensation forms within you as you look at..."
     scene nier_c1_e4 with dissolve
@@ -743,7 +743,7 @@ label nier_c1_safehouse:
     scene nier_c1_f1 with dissolve
     "You sit beside the bed, forcing yourself to focus despite the unfamiliar sight before you."
     "She lies still, exposed and silent, posture composed but unmistakably vulnerable."
-    char.player "{think}I've never seen this defenseless before."
+    char.player "{think}I've never seen her this defenseless before."
     scene nier_c1_f2 with dissolve
     "You hesitate, hands hovering for a brief moment before settling carefully against her breasts."
     char.player "{think}I'm trying to focus on the task, but... why is my heart beating this fast?"
@@ -834,7 +834,7 @@ label nier_c1_safehouse:
     char.player "I care about you, and I don't want you to die."
     char.nier "..."
     scene nier_c1_f16 with dissolve
-    char.nier "YoRHa units can be resotred through data uploads."
+    char.nier "YoRHa units can be restored through data uploads."
     char.nier "Please clarify."
     char.player "If you fall before a full upload, what comes back isn't you."
     char.player "It's a version missing everything since the last sync."
@@ -948,8 +948,8 @@ label nier_c1_safehouse:
         char.nier "Affirmative. Increasing pressure."
         scene nier_c1_g3 with dissolve
         "2B compressed her breasts harder, her arms flexing to heighten the grip."
-        char.player "{think}Her boobs are covering my cock... it feels go good. I hope this goes on forever."
-        "The head of your cock ermerged from her cleavage with every upward stroke, only to vanish again."
+        char.player "{think}Her boobs are covering my cock... it feels so good. I hope this goes on forever."
+        "The head of your cock emerged from her cleavage with every upward stroke, only to vanish again."
         char.nier "Heart rate increased. Blood circulation changed. Ejaculation imminent?"
         char.player "Yes- shit, yes, 2B. Something... something is building up."
         "Your voice cracked, thighs tensing, and your hands grabbing the bedsheets as you thrust shallowly into her tits."
@@ -967,21 +967,21 @@ label nier_c1_safehouse:
         scene nier_c1_g6 with dissolve
         "2B held steady, easing her grip as your spasms faded. She rose, semen trailing down her chest."
         scene nier_c1_g7 with dissolve
-        char.nier "Orgasms achieved. Mission support fulfilled. Operator vitals sta-..."
+        char.nier "Orgasm achieved. Mission support fulfilled. Operator vitals sta-..."
         scene nier_c1_g8 with dissolve
         "She pauses. Your cum still dripping from her face."
         char.player "?"
         scene nier_c1_g9 with dissolve
         char.nier "Operator. Your vitals are not stabalizing. Re-checking database..."
         char.player "{think}That felt so good... I didn't know sensations like those existed."
-        char.nier "Completed. It seems you still require more assistence, please lie down. I will conduct the next step."
+        char.nier "Completed. It seems you still require more assistance, please lie down. I will conduct the next step."
         char.player "{think}There's a next step?! Fuck..."
         char.player "U-understood... I'll leave it up to you..."
         char.nier "Affirmative."
         scene nier_c1_g10 with dissolve
         "2B slides off her last piece of clothing as she straddles you swiftly, facing away, her pale ass cheeks parting as she positioned herself over your hips."
         "Her voluptuous ass staring at you. Her pussy exposed for you to see."
-        char.nier "Begining intercourse. Data shown this is the most effective method for calming down an erection. Shall I proceed?"
+        char.nier "Beginning intercourse. Data shown this is the most effective method for calming down an erection. Shall I proceed?"
         char.player "Fuck yes... please do."
         char.nier "Achknowledge."
         scene nier_c1_g12 with dissolve
@@ -997,8 +997,8 @@ label nier_c1_safehouse:
         char.player "H-harder 2B. Ride me harder..."
         char.nier "Affirmative. Ad-adjusting pace for increase intensity."
         scene nier_c1_g14 with dissolve
-        "She accelerated, slamming down with percision, her pussy gripping and releasing your cock in waves."
-        "Wet slaps echoed in the bay as her as ripples from the impacts."
+        "She accelerated, slamming down with precision, her pussy gripping and releasing your cock in waves."
+        "Wet slaps echoed in the bay as her ass ripples from the impacts."
         char.nier "Vitals u-updating, arousal peaking again."
         char.player "D-don't stop- I'm gonna cum again soon! It's like your pussy is sucking me dry...!"
         "Your balls tightened, the pressure building up yet again as you watch her ass grind against you."
@@ -1021,12 +1021,12 @@ label nier_c1_safehouse:
         char.player "*Panting heavily* That was... incredible. I've never felt anything like that..."
         char.nier "Likewise, Operator. I also felt... different."
         scene black with fade
-        char.player "{think}That is a good sign, I really hope we that do that again..."
+        char.player "{think}That is a good sign, I really hope we can do that again..."
         "She gets off you and sets by the bedside."
         scene nier_c1_g19 with dissolve
         char.nier "Thank you for always looking out for me, Operator. I will be more careful in the future."
         char.player "I'll continue to do so. Don't die on me 2B..."
-        char.nier "Achknowledge... that means I might forget... about this..."
+        char.nier "Acknowledge... that means I might forget... about this..."
         char.player "T-that too... I err..."
         char.player "I hope I can count on you again the next time this... err... happens."
         scene nier_c1_g20 with dissolve
